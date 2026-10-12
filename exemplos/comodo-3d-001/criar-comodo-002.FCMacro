@@ -1,0 +1,144 @@
+# -*- coding: utf-8 -*-
+"""Exercicio sintetico FreeCAD. Executar esta macro no FreeCAD com interface.
+Gera uma nova pasta numerada em cada execucao; nunca substitui modelos existentes.
+Usa primitivas e cortes Part nativos, sem macros externas nem complementos.
+"""
+from pathlib import Path
+import json
+import hashlib
+import math
+import FreeCAD as App
+import FreeCADGui as Gui
+from PySide import QtCore
+
+# Milimetros. Medidas ilustrativas, nao especificacoes de construcao.
+L, W, H, T = 4000.0, 3000.0, 2700.0, 150.0
+PW, PH, JW, JH, PEITORIL = 900.0, 2100.0, 1200.0, 1000.0, 1000.0
+source = Path(__file__).resolve()
+root = source.parent
+number = 1
+while (root / ('saida-%03d' % number)).exists():
+    number += 1
+out = root / ('saida-%03d' % number)
+out.mkdir()
+doc = App.newDocument('ComodoDidatico')
+doc.Label = 'Comodo 4 x 3 m - estudo %03d' % number
+building = doc.addObject('App::DocumentObjectGroup', 'Arquitetura')
+building.Label = 'Arquitetura - modelo completo'
+openings = doc.addObject('App::DocumentObjectGroup', 'Esquadrias')
+openings.Label = 'Porta e janela - representacao simplificada'
+wall_color = (0.88, 0.90, 0.91)
+wood = (0.56, 0.33, 0.16)
+frame_color = (0.16, 0.20, 0.24)
+
+def box(name, label, size, point, color, group=building):
+    obj = doc.addObject('Part::Box', name)
+    obj.Label = label
+    obj.Length, obj.Width, obj.Height = size
+    obj.Placement.Base = App.Vector(*point)
+    obj.ViewObject.ShapeColor = color
+    obj.ViewObject.LineColor = (0.23, 0.26, 0.29)
+    group.addObject(obj)
+    return obj
+
+floor = box('Piso', 'Piso - espessura 100 mm', (L+2*T,W+2*T,100),(-T,-T,-100),(0.72,0.64,0.49))
+front_base = box('BaseFrente','Base da parede frontal',(L+2*T,T,H),(-T,-T,0),wall_color)
+back_base = box('BaseFundo','Base da parede posterior',(L+2*T,T,H),(-T,W,0),wall_color)
+left = box('ParedeEsquerda','Parede esquerda - 150 mm',(T,W,H),(-T,0,0),wall_color)
+right = box('ParedeDireita','Parede direita - transparente para estudo',(T,W,H),(L,0,0),wall_color)
+door_hole = box('VaoPorta','Cortador - porta 900 x 2100 mm',(PW,T+20,PH),(700,-T-10,0),wall_color)
+window_hole = box('VaoJanela','Cortador - janela 1200 x 1000 mm',(JW,T+20,JH),(1500,W-10,PEITORIL),wall_color)
+
+def cut(name, label, base, tool):
+    obj = doc.addObject('Part::Cut', name)
+    obj.Label, obj.Base, obj.Tool = label, base, tool
+    obj.Refine = True
+    obj.ViewObject.ShapeColor = wall_color
+    obj.ViewObject.LineColor = (0.23,0.26,0.29)
+    building.addObject(obj)
+    return obj
+
+front = cut('ParedeFrente','Parede frontal - porta - transparente para estudo',front_base,door_hole)
+back = cut('ParedeFundo','Parede posterior - janela',back_base,window_hole)
+front.ViewObject.Transparency = 82
+right.ViewObject.Transparency = 82
+
+# Batentes e folha da porta aberta para dentro, em 90 graus.
+box('BatenteEsquerdo','Porta - batente esquerdo',(40,T,PH),(700,-T,0),wood,openings)
+box('BatenteDireito','Porta - batente direito',(40,T,PH),(700+PW-40,-T,0),wood,openings)
+box('TravessaPorta','Porta - travessa superior',(PW-80,T,40),(740,-T,PH-40),wood,openings)
+leaf = box('FolhaPorta','Porta - folha aberta 90 graus',(PW-80,35,PH-40),(740,-75,0),wood,openings)
+leaf.Placement.Rotation = App.Rotation(App.Vector(0,0,1),90)
+
+# Caixilho fixo simplificado com duas panes; vao total 1200 x 1000 mm.
+for name, label, size, position in [
+    ('JanelaLateralE','Janela - lateral esquerda',(40,70,JH),(1500,W+40,PEITORIL)),
+    ('JanelaLateralD','Janela - lateral direita',(40,70,JH),(1500+JW-40,W+40,PEITORIL)),
+    ('JanelaInferior','Janela - travessa inferior',(JW-80,70,40),(1540,W+40,PEITORIL)),
+    ('JanelaSuperior','Janela - travessa superior',(JW-80,70,40),(1540,W+40,PEITORIL+JH-40)),
+    ('JanelaMontante','Janela - montante central',(40,70,JH-80),(1500+JW/2-20,W+40,PEITORIL+40)),
+]:
+    box(name,label,size,position,frame_color,openings)
+for n,x in enumerate((1540,1500+JW/2+20),1):
+    glass = box('Vidro%d'%n,'Janela - vidro %d'%n,((JW-120)/2,8,JH-80),(x,W+70,PEITORIL+40),(0.35,0.70,0.86),openings)
+    glass.ViewObject.Transparency = 55
+
+doc.recompute()
+for obj in (front_base,back_base,door_hole,window_hole):
+    obj.ViewObject.Visibility = False
+
+shape_names = [o.Name for o in doc.Objects if o.TypeId in ('Part::Box','Part::Cut') and o.ViewObject.Visibility]
+def verify(document):
+    checks = []
+    for name in shape_names:
+        obj = document.getObject(name)
+        assert not obj.Shape.isNull() and obj.Shape.isValid(), name
+        assert obj.Shape.Volume > 0 and len(obj.Shape.Solids) == 1, name
+        assert not any('Error' in str(s) for s in obj.State), (name,obj.State)
+        checks.append({'objeto':name,'solidos':len(obj.Shape.Solids),'volume_mm3':round(obj.Shape.Volume,3),'valido':True})
+    expected_front = (L+2*T)*T*H-PW*T*PH
+    expected_back = (L+2*T)*T*H-JW*T*JH
+    assert math.isclose(document.ParedeFrente.Shape.Volume,expected_front,abs_tol=0.01)
+    assert math.isclose(document.ParedeFundo.Shape.Volume,expected_back,abs_tol=0.01)
+    assert not document.ParedeFrente.Shape.isInside(App.Vector(1000,-75,1000),0.001,True)
+    assert not document.ParedeFundo.Shape.isInside(App.Vector(2000,W+75,1500),0.001,True)
+    assert document.ParedeFrente.Shape.isInside(App.Vector(2000,-75,1000),0.001,True)
+    assert document.ParedeFundo.Shape.isInside(App.Vector(1000,W+75,1500),0.001,True)
+    return checks
+
+verify(doc)
+Gui.activateWorkbench('PartWorkbench')
+Gui.activeDocument().activeView().viewAxonometric()
+Gui.activeDocument().activeView().fitAll()
+model = out / 'comodo-001.FCStd'
+doc.saveAs(str(model))
+saved_name = doc.Name
+App.closeDocument(saved_name)
+doc = App.openDocument(str(model))
+doc.recompute()
+checks = verify(doc)
+Gui.activeDocument().activeView().viewAxonometric()
+Gui.activeDocument().activeView().fitAll()
+Gui.Selection.clearSelection()
+Gui.updateGui()
+
+def finish():
+    image = out / 'comodo-isometrico-001.png'
+    Gui.activeDocument().activeView().saveImage(str(image),1400,1000,'White')
+    manifest = {
+        'tipo':'exercicio_sintetico_arquitetonico', 'software':'FreeCAD',
+        'versao':'.'.join(App.Version()[:3]), 'unidade_geometria':'mm',
+        'dimensoes_internas_mm':[L,W], 'area_interna_m2':L*W/1000000,
+        'pe_direito_mm':H,'espessura_paredes_mm':T,'espessura_piso_mm':100,
+        'vao_porta_mm':[PW,PH],'vao_janela_mm':[JW,JH],'peitoril_mm':PEITORIL,
+        'modelagem':'Part::Box e Part::Cut nativos; nao sao objetos BIM/IFC',
+        'vista':'Isometrica; paredes frontal/direita com 82% de transparencia; sem teto',
+        'pronto_para_publicar':False,'pronto_para_execucao':False,
+        'pendencias':['Revisao tecnica e aprovacao humana','Projeto eletrico ainda nao realizado'],
+        'verificacao':{'reaberto_no_FreeCAD':True,'cortes_porta_janela_verificados':True,'geometrias':checks},
+        'arquivos':[{'nome':p.name,'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in (source,model,image)],
+    }
+    (out / 'manifesto-001.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    App.Console.PrintMessage('Comodo criado, reaberto e verificado: '+str(model)+'\n')
+
+QtCore.QTimer.singleShot(800,finish)

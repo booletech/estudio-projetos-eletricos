@@ -22,10 +22,20 @@ aterramento, trajetos executivos e revisão técnica estão pendentes.
 
 ## Organização
 
-A fase atual é pesquisa e aprendizado. Comece pela
+A fase atual é aprendizado, com prática do cômodo simples autorizada. Comece pela
 [base de estudo dos programas](docs/pesquisa/README.md) e pelos
 [sete perfis de agentes](agentes/README.md). As instruções foram versionadas;
 não há serviço autônomo, orquestrador ou modelo treinado instalado.
+
+## Primeiro cômodo em 3D
+
+Exercício criado e reaberto no FreeCAD 1.1.4: área interna de 4 × 3 m (12 m²),
+pé-direito de 2,70 m, piso, quatro paredes, porta e janela. Duas paredes estão
+transparentes na vista inicial para mostrar o interior. São objetos Part
+editáveis, sem classificação BIM/IFC ou projeto elétrico.
+
+- [Modelo FCStd, imagem e macro](exemplos/comodo-3d-001/README.md)
+- [Verificações e aprendizado](docs/FREECAD-COMODO-001.md)
 
 `exemplos/` guarda material sintético. `projetos/` recebe somente material
 expressamente autorizado e sem dados pessoais. `agentes/` guarda instruções

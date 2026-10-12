@@ -1,6 +1,6 @@
 # Instruções para agentes
 
-## Fase atual: pesquisa e aprendizado
+## Fase atual: aprendizado e exercício autorizado
 
 Em 12/10/2026, o usuário determinou reunir informações antes de novos projetos.
 Nesta fase, ler a base em `docs/pesquisa/` e usar os perfis de `agentes/` apenas
@@ -14,6 +14,15 @@ sincronizando apenas mudanças autorizadas; não iniciar exercícios por conta p
 Em 12/10/2026, o usuário também autorizou instalar o FreeCAD portátil,
 conferir sua abertura e pesquisar modelagem arquitetônica 3D. Essa verificação
 de instalação é permitida; ainda não há pedido para construir a casa.
+
+Depois, em 12/10/2026, o usuário solicitou criar um cômodo simples e continuar
+o projeto. Está autorizada a prática desse cômodo sintético no FreeCAD, sua
+visualização, salvamento FCStd, imagem PNG e registro no repositório.
+Consultar `exemplos/comodo-3d-001/README.md` e
+`docs/FREECAD-COMODO-001.md`. A autorização não implica construção de uma
+casa completa, dimensionamento ou aprovação técnica de instalações.
+Os perfis anteriores continuam úteis para pesquisa; suas restrições de fase
+devem ser interpretadas com esta autorização mais recente.
 
 ## Escopo e autorização
 

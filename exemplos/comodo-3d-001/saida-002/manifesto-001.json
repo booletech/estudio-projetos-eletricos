@@ -1,0 +1,150 @@
+{
+  "tipo": "exercicio_sintetico_arquitetonico",
+  "software": "FreeCAD",
+  "versao": "1.1.4",
+  "unidade_geometria": "mm",
+  "dimensoes_internas_mm": [
+    4000.0,
+    3000.0
+  ],
+  "area_interna_m2": 12.0,
+  "pe_direito_mm": 2700.0,
+  "espessura_paredes_mm": 150.0,
+  "espessura_piso_mm": 100,
+  "vao_porta_mm": [
+    900.0,
+    2100.0
+  ],
+  "vao_janela_mm": [
+    1200.0,
+    1000.0
+  ],
+  "peitoril_mm": 1000.0,
+  "modelagem": "Part::Box e Part::Cut nativos; nao sao objetos BIM/IFC",
+  "vista": "Isometrica; paredes frontal/direita com 82% de transparencia; sem teto",
+  "pronto_para_publicar": false,
+  "pronto_para_execucao": false,
+  "pendencias": [
+    "Revisao tecnica e aprovacao humana",
+    "Projeto eletrico ainda nao realizado"
+  ],
+  "verificacao": {
+    "reaberto_no_FreeCAD": true,
+    "cortes_porta_janela_verificados": true,
+    "geometrias": [
+      {
+        "objeto": "Piso",
+        "solidos": 1,
+        "volume_mm3": 1419000000.0,
+        "valido": true
+      },
+      {
+        "objeto": "ParedeEsquerda",
+        "solidos": 1,
+        "volume_mm3": 1215000000.0,
+        "valido": true
+      },
+      {
+        "objeto": "ParedeDireita",
+        "solidos": 1,
+        "volume_mm3": 1215000000.0,
+        "valido": true
+      },
+      {
+        "objeto": "ParedeFrente",
+        "solidos": 1,
+        "volume_mm3": 1458000000.0,
+        "valido": true
+      },
+      {
+        "objeto": "ParedeFundo",
+        "solidos": 1,
+        "volume_mm3": 1561500000.0,
+        "valido": true
+      },
+      {
+        "objeto": "BatenteEsquerdo",
+        "solidos": 1,
+        "volume_mm3": 12600000.0,
+        "valido": true
+      },
+      {
+        "objeto": "BatenteDireito",
+        "solidos": 1,
+        "volume_mm3": 12600000.0,
+        "valido": true
+      },
+      {
+        "objeto": "TravessaPorta",
+        "solidos": 1,
+        "volume_mm3": 4920000.0,
+        "valido": true
+      },
+      {
+        "objeto": "FolhaPorta",
+        "solidos": 1,
+        "volume_mm3": 59122000.0,
+        "valido": true
+      },
+      {
+        "objeto": "JanelaLateralE",
+        "solidos": 1,
+        "volume_mm3": 2800000.0,
+        "valido": true
+      },
+      {
+        "objeto": "JanelaLateralD",
+        "solidos": 1,
+        "volume_mm3": 2800000.0,
+        "valido": true
+      },
+      {
+        "objeto": "JanelaInferior",
+        "solidos": 1,
+        "volume_mm3": 3136000.0,
+        "valido": true
+      },
+      {
+        "objeto": "JanelaSuperior",
+        "solidos": 1,
+        "volume_mm3": 3136000.0,
+        "valido": true
+      },
+      {
+        "objeto": "JanelaMontante",
+        "solidos": 1,
+        "volume_mm3": 2576000.0,
+        "valido": true
+      },
+      {
+        "objeto": "Vidro1",
+        "solidos": 1,
+        "volume_mm3": 3974400.0,
+        "valido": true
+      },
+      {
+        "objeto": "Vidro2",
+        "solidos": 1,
+        "volume_mm3": 3974400.0,
+        "valido": true
+      }
+    ]
+  },
+  "arquivos": [
+    {
+      "nome": "criar-comodo-002.FCMacro",
+      "bytes": 7182,
+      "sha256": "2f23e763de866a88f66efc5b21fe78ea31a62014f7a649e71ae5b28625075466"
+    },
+    {
+      "nome": "comodo-001.FCStd",
+      "bytes": 47382,
+      "sha256": "81a0be19aa58bcb56289ed640e3e1360ae255ff5802be3cbbdf37c13a7cfc7d5"
+    },
+    {
+      "nome": "comodo-isometrico-001.png",
+      "bytes": 24121,
+      "sha256": "b5a208c434e720f1811fcac7fe3b5fcd8bae82038c7da2d735b6d6a0f3e62c1c"
+    }
+  ]
+}
