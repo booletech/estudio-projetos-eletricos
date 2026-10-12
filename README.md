@@ -24,7 +24,7 @@ aterramento, trajetos executivos e revisão técnica estão pendentes.
 
 A fase atual é pesquisa e aprendizado. Comece pela
 [base de estudo dos programas](docs/pesquisa/README.md) e pelos
-[seis perfis de agentes](agentes/README.md). As instruções foram versionadas;
+[sete perfis de agentes](agentes/README.md). As instruções foram versionadas;
 não há serviço autônomo, orquestrador ou modelo treinado instalado.
 
 `exemplos/` guarda material sintético. `projetos/` recebe somente material
@@ -36,6 +36,13 @@ verificações e pendências. `local/`, `tools/` e `.venv/` ficam fora do Git.
 
 - LibreCAD 2.2.1.5: https://librecad.org/
 - QElectroTech 0.100: https://qelectrotech.org/
+- FreeCAD 1.1.4: https://www.freecad.org/
+
+O [guia FreeCAD/BIM](docs/pesquisa/FREECAD-001.md) e o
+[plano da casa em 3D](docs/pesquisa/CASA-3D-PLANO-001.md) preparam a próxima
+prática. Para abrir a cópia local desta máquina, usar
+[o lançador portátil](scripts/abrir-freecad-001.cmd). Em outra máquina, baixar
+o pacote oficial e adaptar sua localização; o executável não acompanha o Git.
 
 Nesta máquina, as cópias locais estão em `../tools/`, dentro do diretório de
 trabalho original. Os programas e seus instaladores não são distribuídos por

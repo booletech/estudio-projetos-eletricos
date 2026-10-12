@@ -1,7 +1,8 @@
-# Base de estudo — revisão 001
+# Base de estudo — revisão 002
 
 Pesquisa realizada em 12/10/2026. Recorte: funcionamento do LibreCAD e
-QElectroTech para apoiar desenhos residenciais e industriais.
+QElectroTech para apoiar desenhos residenciais e industriais. Inclui agora
+o estudo de arquitetura 3D no FreeCAD.
 
 1. [Fontes primárias e versões](FONTES-001.md).
 2. [Guia de LibreCAD](LIBRECAD-001.md).
@@ -9,6 +10,10 @@ QElectroTech para apoiar desenhos residenciais e industriais.
 4. [Divisão de trabalho e lacunas](FLUXO-001.md).
 5. [Plano de aprendizado e exercícios futuros](APRENDIZADO-001.md).
 6. [Perfis de agentes](../../agentes/README.md).
+7. [Guia de FreeCAD/BIM](FREECAD-001.md).
+8. [Plano de aprendizado da casa em 3D](CASA-3D-PLANO-001.md).
+9. [Fontes oficiais FreeCAD](fontes-freecad-001.json).
+10. [Instalação portátil do FreeCAD](../FREECAD-INSTALACAO-001.md).
 
 ## Como usar
 

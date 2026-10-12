@@ -1,0 +1,20 @@
+{
+  "revisao": "001",
+  "consultado_em": "2026-10-12",
+  "software_referencia": "FreeCAD 1.1.4 Windows x86_64 py311",
+  "fase": "instalacao_e_pesquisa",
+  "modelo_da_casa_criado": false,
+  "fontes": [
+    {"id":"F01","titulo":"FreeCAD 1.1.4 release","url":"https://github.com/FreeCAD/FreeCAD/releases/tag/1.1.4","versao_documental":"1.1.4","status":"consultada"},
+    {"id":"F02","titulo":"BIM Workbench","url":"https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/BIM_Workbench.md","versao_documental":"main; integracao 1.0","status":"consultada"},
+    {"id":"F03","titulo":"Arch Wall","url":"https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/Arch_Wall.md","versao_documental":"main; conferir detalhes em 1.1.4","status":"consultada"},
+    {"id":"F04","titulo":"Arch Window","url":"https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/Arch_Window.md","versao_documental":"main; conferir detalhes em 1.1.4","status":"consultada"},
+    {"id":"F05","titulo":"Arch Roof","url":"https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/Arch_Roof.md","versao_documental":"main; conferir detalhes em 1.1.4","status":"consultada"},
+    {"id":"F06","titulo":"Draft DXF","url":"https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/Draft_DXF.md","versao_documental":"main; importadores distintos","status":"consultada"},
+    {"id":"F07","titulo":"Mouse navigation","url":"https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/Mouse_navigation.md","versao_documental":"main; inclui Touchpad","status":"consultada"},
+    {"id":"F08","titulo":"Std ViewFitAll","url":"https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/Std_ViewFitAll.md","versao_documental":"main; V depois F","status":"consultada"},
+    {"id":"F09","titulo":"Arch IFC","url":"https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/Arch_IFC.md","versao_documental":"main; inclui trechos historicos","status":"consultada"},
+    {"id":"F10","titulo":"Start up and Configuration","url":"https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/Start_up_and_Configuration.md","versao_documental":"main; CLI referencia 1.0, opcoes podem mudar","status":"consultada"},
+    {"id":"F11","titulo":"License","url":"https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/License.md","versao_documental":"main na data consultada","status":"consultada"}
+  ]
+}

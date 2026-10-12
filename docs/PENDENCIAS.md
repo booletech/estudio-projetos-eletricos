@@ -9,6 +9,8 @@
 - [x] Criar seis perfis de instruções para estudo, apoio e curadoria.
 - [ ] Avaliar o comportamento desses perfis e realizar exercícios quando solicitado.
 - [ ] Preparar uma segunda amostra industrial.
+- [x] Pesquisar o FreeCAD/BIM e preparar suas instruções de agente.
+- [ ] Realizar os exercícios de navegação e modelagem do plano da casa 3D quando solicitado.
 
 Esta lista registra trabalho pendente; não representa funcionalidades implementadas.
 Os perfis são instruções consultáveis; não há agentes autônomos instalados.

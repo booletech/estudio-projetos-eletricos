@@ -11,6 +11,10 @@ Não declarar treinamento de pesos, certificação ou domínio prático completo
 Só avançar para prática quando o usuário solicitar. A rotina diária continua
 sincronizando apenas mudanças autorizadas; não iniciar exercícios por conta própria.
 
+Em 12/10/2026, o usuário também autorizou instalar o FreeCAD portátil,
+conferir sua abertura e pesquisar modelagem arquitetônica 3D. Essa verificação
+de instalação é permitida; ainda não há pedido para construir a casa.
+
 ## Escopo e autorização
 
 Trabalhar neste repositório elétrico. O usuário autorizou sua inicialização e
