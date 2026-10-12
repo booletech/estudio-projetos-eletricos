@@ -22,6 +22,11 @@ aterramento, trajetos executivos e revisão técnica estão pendentes.
 
 ## Organização
 
+A fase atual é pesquisa e aprendizado. Comece pela
+[base de estudo dos programas](docs/pesquisa/README.md) e pelos
+[seis perfis de agentes](agentes/README.md). As instruções foram versionadas;
+não há serviço autônomo, orquestrador ou modelo treinado instalado.
+
 `exemplos/` guarda material sintético. `projetos/` recebe somente material
 expressamente autorizado e sem dados pessoais. `agentes/` guarda instruções
 versionadas. `scripts/` guarda ferramentas locais. `docs/` registra decisões,

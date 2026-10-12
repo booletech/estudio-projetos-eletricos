@@ -1,0 +1,26 @@
+{
+  "revisao": "001",
+  "consultado_em": "2026-10-12",
+  "fase": "pesquisa_documental",
+  "treinamento_de_pesos_realizado": false,
+  "exercicios_novos_executados": false,
+  "versoes_locais": {"LibreCAD": "2.2.1.5", "QElectroTech": "0.100 git8590"},
+  "fontes": [
+    {"id":"L01","titulo":"Setting up a Drawing","url":"https://docs.librecad.org/en/2.2.0_a/guides/dwg-setup.html","versao_documental":"2.2.0","status":"consultada","temas":["unidades","escala","templates"]},
+    {"id":"L02","titulo":"Fundamentals","url":"https://docs.librecad.org/en/latest/ref/fundamentals.html","versao_documental":"latest pre-release","status":"consultada","temas":["coordenadas","entidades","camadas"]},
+    {"id":"L03","titulo":"Blocks","url":"https://docs.librecad.org/en/latest/guides/blocks.html","versao_documental":"latest pre-release","status":"consultada","temas":["blocos","instancias","bibliotecas"]},
+    {"id":"L04","titulo":"Snapping","url":"https://docs.librecad.org/en/latest/ref/snaps.html","versao_documental":"latest pre-release","status":"consultada","temas":["precisao"]},
+    {"id":"L05","titulo":"Completing and Printing","url":"https://docs.librecad.org/en/latest/guides/completion.html","versao_documental":"latest pre-release","status":"consultada","temas":["papel","previa","impressao"]},
+    {"id":"L06","titulo":"The Console Tool","url":"https://docs.librecad.org/en/2.2.0_a/guides/console-tool.html","versao_documental":"2.2.0","status":"consultada","temas":["dxf2pdf","fit","escala"]},
+    {"id":"L07","titulo":"LibreCAD 2.2.1.5 Patch Release","url":"https://github.com/LibreCAD/LibreCAD/releases/tag/v2.2.1.5","versao_documental":"2.2.1.5","status":"consultada","temas":["release"]},
+    {"id":"Q01","titulo":"What is a project?","url":"https://qelectrotech.github.io/qelectrotech-doc/users/project/what_is.html","versao_documental":"nao declarada na pagina consultada","status":"consultada","temas":["projeto","folios"]},
+    {"id":"Q02","titulo":"What is an element?","url":"https://qelectrotech.github.io/qelectrotech-doc/users/element/what_is.html","versao_documental":"nao declarada na pagina consultada","status":"consultada","temas":["elementos","metadados"]},
+    {"id":"Q03","titulo":"Create conductor","url":"https://qelectrotech.github.io/qelectrotech-doc/users/schema/conductor/conductor_creation.html","versao_documental":"nao declarada na pagina consultada","status":"consultada","temas":["terminais","conexoes"]},
+    {"id":"Q04","titulo":"Conductor numbering","url":"https://qelectrotech.github.io/qelectrotech-doc/users/conductor/properties/conductor_numbering.html","versao_documental":"nao declarada na pagina consultada","status":"consultada","temas":["numeracao"]},
+    {"id":"Q05","titulo":"Cross reference at master element","url":"https://qelectrotech.github.io/qelectrotech-doc/users/element/cross_reference/cross_reference_master.html","versao_documental":"nao declarada na pagina consultada","status":"consultada","temas":["mestre","escravo","referencias"]},
+    {"id":"Q06","titulo":"Export nomenclature","url":"https://qelectrotech.github.io/qelectrotech-doc/users/export&print/export_nomenclature.html","versao_documental":"nao declarada na pagina consultada","status":"consultada","temas":["CSV","nomenclatura"]},
+    {"id":"Q07","titulo":"Create a PDF from a project","url":"https://qelectrotech.github.io/qelectrotech-doc/users/export&print/create_pdf.html","versao_documental":"texto menciona 0.7","status":"consultada","temas":["PDF","folios","diferencas de versao"]},
+    {"id":"Q08","titulo":"QElectroTech 0.100 release","url":"https://github.com/qelectrotech/qelectrotech-source-mirror/releases/tag/0.100","versao_documental":"0.100","status":"consultada","temas":["release"]},
+    {"id":"Q09","titulo":"ELEMENTS.LICENSE","url":"https://github.com/qelectrotech/qelectrotech-elements/blob/main/ELEMENTS.LICENSE","versao_documental":"main na data de consulta","status":"consultada","temas":["direitos","colecao","restricao de treinamento ML"]}
+  ]
+}

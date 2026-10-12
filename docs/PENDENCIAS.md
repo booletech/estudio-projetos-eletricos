@@ -5,7 +5,10 @@
 - [ ] Definir dados de entrada de um projeto real: arquitetura, alimentação,
   cargas e requisitos de entrega.
 - [ ] Criar biblioteca de símbolos e carimbo com revisão humana.
-- [ ] Criar e testar agentes especializados quando seu escopo for definido.
+- [x] Reunir a primeira base documental com fontes oficiais e versões.
+- [x] Criar seis perfis de instruções para estudo, apoio e curadoria.
+- [ ] Avaliar o comportamento desses perfis e realizar exercícios quando solicitado.
 - [ ] Preparar uma segunda amostra industrial.
 
 Esta lista registra trabalho pendente; não representa funcionalidades implementadas.
+Os perfis são instruções consultáveis; não há agentes autônomos instalados.

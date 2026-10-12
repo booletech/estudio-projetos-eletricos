@@ -1,5 +1,16 @@
 # Instruções para agentes
 
+## Fase atual: pesquisa e aprendizado
+
+Em 12/10/2026, o usuário determinou reunir informações antes de novos projetos.
+Nesta fase, ler a base em `docs/pesquisa/` e usar os perfis de `agentes/` apenas
+para pesquisar, explicar, registrar evidências e planejar exercícios. Não
+criar/alterar CAD, executar exportações ou realizar dimensionamento nesta fase.
+Os perfis são instruções consultáveis, não processos autônomos instalados.
+Não declarar treinamento de pesos, certificação ou domínio prático completo.
+Só avançar para prática quando o usuário solicitar. A rotina diária continua
+sincronizando apenas mudanças autorizadas; não iniciar exercícios por conta própria.
+
 ## Escopo e autorização
 
 Trabalhar neste repositório elétrico. O usuário autorizou sua inicialização e
