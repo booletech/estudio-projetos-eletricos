@@ -1,0 +1,169 @@
+# -*- coding: utf-8 -*-
+"""Adicionar pontos/rotas conceituais em uma copia preservada do comodo.
+Executar no FreeCAD 1.1.4 com Ctrl+F6. Sem dimensionamento eletrico.
+"""
+from pathlib import Path
+import json, hashlib, shutil, math
+import FreeCAD as App
+import FreeCADGui as Gui
+import Part, Draft
+from PySide import QtCore
+
+macro = Path(__file__).resolve()
+root = macro.parent
+config_path = root / 'pontos-001.json'
+config = json.loads(config_path.read_text(encoding='utf-8'))
+source = root.parent / 'comodo-3d-001/saida-002/comodo-001.FCStd'
+source_hash = hashlib.sha256(source.read_bytes()).hexdigest()
+assert source_hash == '81a0be19aa58bcb56289ed640e3e1360ae255ff5802be3cbbdf37c13a7cfc7d5'
+revision = 1
+while (root / ('saida-%03d' % revision)).exists():
+    revision += 1
+out = root / ('saida-%03d' % revision)
+out.mkdir()
+copied = out / 'fonte-comodo-001.FCStd'
+shutil.copy2(source,copied)
+assert hashlib.sha256(copied.read_bytes()).hexdigest() == source_hash
+doc = App.openDocument(str(copied))
+App.setActiveDocument(doc.Name)
+doc.Label = 'Sala 5 x 4 m - mobiliada - eletrica didatica'
+exec(compile((root/'mobiliario-001.py').read_text(encoding='utf-8'),str(root/'mobiliario-001.py'),'exec'))
+points_group = doc.addObject('App::DocumentObjectGroup','PontosEletricos')
+points_group.Label = 'Eletrica - L1 S1 T1 T2 T3 T4 - estudo'
+routes_group = doc.addObject('App::DocumentObjectGroup','TrajetosConceituais')
+routes_group.Label = 'Trajetos conceituais - sem dimensionamento'
+labels_group = doc.addObject('App::DocumentObjectGroup','IdentificacoesEletricas')
+labels_group.Label = 'Identificacoes dos pontos'
+orange = (1.0,0.42,0.05)
+blue = (0.05,0.36,0.85)
+yellow = (1.0,0.83,0.10)
+grey = (0.36,0.40,0.46)
+point_index = {p['id']:p for p in config['pontos']}
+
+def metadata(obj,point):
+    obj.addProperty('App::PropertyString','Identificador','Estudo').Identificador=point['id']
+    obj.addProperty('App::PropertyString','TipoPonto','Estudo').TipoPonto=point['tipo']
+    obj.addProperty('App::PropertyVector','CentroReferencia','Estudo').CentroReferencia=App.Vector(*point['centro_mm'])
+    obj.addProperty('App::PropertyString','EstadoTecnico','Estudo').EstadoTecnico='Hipotese didatica; nao aprovado para execucao'
+    points_group.addObject(obj)
+
+lamp=doc.addObject('Part::Cylinder','L1')
+lamp.Label='L1 - luz central - potencia pendente'
+lamp.Radius, lamp.Height=100,50
+lamp.Placement.Base=App.Vector(2500,2000,2640)
+lamp.ViewObject.ShapeColor=yellow
+metadata(lamp,point_index['L1'])
+plate_specs={
+    'S1':((80,20,120),(1760,0,1040),orange),
+    'T1':((100,20,120),(4300,0,240),blue),
+    'T2':((20,100,120),(4980,2250,240),blue),
+    'T3':((100,20,120),(3550,3980,240),blue),
+    'T4':((20,100,120),(0,1750,240),blue),
+    'D1':((80,100,80),(4920,1950,2460),grey)
+}
+for name,(size,position,color) in plate_specs.items():
+    obj=doc.addObject('Part::Box',name)
+    obj.Label=name+' - '+point_index[name]['tipo']+' - representacao grafica'
+    obj.Length,obj.Width,obj.Height=size
+    obj.Placement.Base=App.Vector(*position)
+    obj.ViewObject.ShapeColor=color
+    metadata(obj,point_index[name])
+
+# Rotas por segmentos cilindricos unicos. Raio de 12 mm e somente espessura
+# de visualizacao: NAO especifica diametro de eletroduto ou de condutor.
+route_objects=[]
+known_segments=set()
+for route in config['rotas']:
+    assert route['vertices_mm'][0] == point_index[route['de']]['centro_mm']
+    assert route['vertices_mm'][-1] == point_index[route['para']]['centro_mm']
+    if route['grupo']=='origem_pendente':
+        obj=doc.addObject('Part::Feature','A0')
+        obj.Label='A0 - origem e alimentacao a definir'
+        obj.Shape=Part.makePolygon([App.Vector(*p) for p in route['vertices_mm']])
+        obj.ViewObject.LineColor=(0.85,0.12,0.15)
+        obj.ViewObject.LineWidth=4
+        obj.ViewObject.DrawStyle='Dashed'
+        routes_group.addObject(obj)
+        continue
+    color=blue if route['grupo']=='tomadas' else orange
+    for a,b in zip(route['vertices_mm'],route['vertices_mm'][1:]):
+        key=(route['grupo']=='tomadas',tuple(sorted([tuple(a),tuple(b)])))
+        if key in known_segments:
+            continue
+        known_segments.add(key)
+        v=App.Vector(*b)-App.Vector(*a)
+        assert v.Length>0
+        obj=doc.addObject('Part::Cylinder','TrechoEletrico')
+        obj.Label=route['id']+' - trajeto grafico'
+        obj.Radius,obj.Height=12,v.Length
+        obj.Placement=App.Placement(App.Vector(*a),App.Rotation(App.Vector(0,0,1),v))
+        obj.ViewObject.ShapeColor=color
+        obj.ViewObject.LineColor=color
+        obj.addProperty('App::PropertyString','RotaReferencia','Estudo').RotaReferencia=route['id']
+        obj.addProperty('App::PropertyString','GrupoTrajeto','Estudo').GrupoTrajeto=route['grupo']
+        obj.addProperty('App::PropertyString','DiametroTecnico','Estudo').DiametroTecnico='Nao definido; raio usado apenas para visualizacao'
+        routes_group.addObject(obj)
+        route_objects.append(obj.Name)
+
+for point in config['pontos']:
+    x,y,z=point['centro_mm']
+    if point['id']=='A0':
+        text='A0'
+        pos=App.Vector(x,y,z+140)
+    else:
+        text=point['id']
+        pos=App.Vector(x+60,y+30,z+170)
+    label=Draft.make_text(text,placement=pos,screen=True,height=18)
+    label.Label='Etiqueta '+point['id']
+    label.ViewObject.TextColor=(0.10,0.12,0.15)
+    labels_group.addObject(label)
+
+doc.recompute()
+original_objects=[o.Name for o in doc.Objects if o.TypeId in ('Part::Box','Part::Cut') and o.ViewObject.Visibility and not hasattr(o,'Identificador')]
+def verify(document):
+    count={kind:sum(p['tipo']==kind for p in config['pontos']) for kind in ('lampada','interruptor','tomada')}
+    assert count == {'lampada':1,'interruptor':1,'tomada':4}
+    assert point_index['S1']['controla']=='L1'
+    for name in original_objects+['L1','S1','T1','T2','T3','T4','D1']+route_objects:
+        obj=document.getObject(name)
+        assert obj and obj.Shape.isValid() and obj.Shape.Volume>0 and len(obj.Shape.Solids)==1,name
+        assert not any('Error' in str(s) for s in obj.State),name
+    for p in config['pontos']:
+        if p['id'] not in ('A0','D1'):
+            v=document.getObject(p['id']).CentroReferencia
+            assert (v-App.Vector(*p['centro_mm'])).Length<0.001
+    assert math.isclose(document.ParedeFrente.Shape.Volume,1863000000,abs_tol=0.01)
+    assert math.isclose(document.ParedeFundo.Shape.Volume,1966500000,abs_tol=0.01)
+    for obj in document.Objects:
+        if obj.TypeId.startswith('Part::') and obj.ViewObject.Visibility and obj.Name!='A0':
+            assert obj.Shape.isValid() and obj.Shape.Volume>0 and len(obj.Shape.Solids)==1,obj.Name
+    return {'pontos':count,'controle_S1_L1':True,'solidos_validos':sum(o.TypeId.startswith('Part::') and o.ViewObject.Visibility and o.Name!='A0' for o in document.Objects),'rotas_com_extremos_conferidos':len(config['rotas']),'segmentos_3d_unicos':len(route_objects)}
+
+checks=verify(doc)
+Gui.activateWorkbench('PartWorkbench')
+Gui.Selection.clearSelection()
+Gui.activeDocument().activeView().viewAxonometric()
+Gui.activeDocument().activeView().fitAll()
+model=out/'sala-mobiliada-eletrica-001.FCStd'
+doc.saveAs(str(model))
+App.closeDocument(doc.Name)
+doc=App.openDocument(str(model))
+App.setActiveDocument(doc.Name)
+doc.recompute()
+checks=verify(doc)
+Gui.Selection.clearSelection()
+Gui.activeDocument().activeView().viewAxonometric()
+Gui.activeDocument().activeView().fitAll()
+Gui.updateGui()
+
+def finish():
+    view=Gui.getDocument(doc.Name).activeView()
+    picture=out/'sala-mobiliada-isometrico-001.png'
+    view.saveImage(str(picture),1600,1100,'White')
+    assert hashlib.sha256(source.read_bytes()).hexdigest()==source_hash
+    records=[{'nome':p.name,'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in (macro,root/'mobiliario-001.py',config_path,copied,model,picture)]
+    manifest={'tipo':'estudo_eletrico_conceitual','software':'FreeCAD','versao':'.'.join(App.Version()[:3]),'fonte_preservada_sha256':source_hash,'dimensoes_internas_mm':[5000,4000,2700],'area_interna_m2':20,'mobiliario':['Sofa de 2200 mm','TV de 43 polegadas 16:9','Estante','Quadros geometricos','Livros, vasos e planta'],'configuracao':'../pontos-001.json','verificacao':checks,'reaberto_no_FreeCAD':True,'hipoteses':config['hipoteses'],'pendencias':config['pendencias'],'pronto_para_publicar':False,'pronto_para_execucao':False,'arquivos':records}
+    (out/'manifesto-3d-001.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    App.Console.PrintMessage('Eletrica didatica criada e verificada: '+str(model)+'\n')
+
+QtCore.QTimer.singleShot(1000,finish)

@@ -37,6 +37,11 @@ editáveis, sem classificação BIM/IFC ou projeto elétrico.
 - [Modelo FCStd, imagem e macro](exemplos/comodo-3d-001/README.md)
 - [Verificações e aprendizado](docs/FREECAD-COMODO-001.md)
 
+O [estudo elétrico do cômodo](exemplos/comodo-eletrico-001/README.md) acrescenta
+L1 (uma lâmpada), S1 (um interruptor) e T1–T4 (quatro tomadas ilustrativas).
+Há modelo FreeCAD, planta DXF aberta no LibreCAD, imagens e lista de pontos.
+Trajetos conceituais e cores gráficas não especificam condutores ou circuitos.
+
 `exemplos/` guarda material sintético. `projetos/` recebe somente material
 expressamente autorizado e sem dados pessoais. `agentes/` guarda instruções
 versionadas. `scripts/` guarda ferramentas locais. `docs/` registra decisões,

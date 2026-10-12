@@ -1,0 +1,73 @@
+{
+  "tipo": "planta_eletrica_didatica",
+  "unidade_geometria": "mm",
+  "impressao": "Escala de impressao nao configurada; geometria 1:1 em mm",
+  "camadas": [
+    "ARQUITETURA",
+    "ILUMINACAO",
+    "TOMADAS",
+    "PENDENCIAS",
+    "TEXTOS",
+    "COTAS"
+  ],
+  "entidades_dxf": {
+    "LINE": 144,
+    "CIRCLE": 3,
+    "TEXT": 30
+  },
+  "quantidades": {
+    "lampada": 1,
+    "interruptor": 1,
+    "tomadas": 4
+  },
+  "rotas_com_extremos_conferidos": 7,
+  "hipoteses": [
+    "Quatro tomadas escolhidas para demonstracao, sem calculo normativo",
+    "Alturas dos pontos sao ilustrativas",
+    "Rotas indicam percurso conceitual, sem condutores ou diametro especificado",
+    "Sala ampliada para 5 x 4 m; mobiliario e decoracao ilustrativos",
+    "TV 43 polegadas: diagonal da tela; proporcao ilustrativa 16:9; sem marca/modelo"
+  ],
+  "pendencias": [
+    "Uso do comodo e equipamentos",
+    "Alimentacao, tensao e origem do quadro",
+    "Cargas e potencias",
+    "Divisao e identificacao final dos circuitos",
+    "Condutores, protecoes, aterramento e condicoes de instalacao",
+    "Revisao tecnica e aprovacao humana"
+  ],
+  "pronto_para_publicar": false,
+  "pronto_para_execucao": false,
+  "arquivos": [
+    {
+      "nome": "gerar-planta-sala-001.py",
+      "bytes": 9092,
+      "sha256": "4f2c23e432ce393a3bd3555c337951fa2c51ba6de3e2763e11c6e10a3c779fdc"
+    },
+    {
+      "nome": "pontos-001.json",
+      "bytes": 5422,
+      "sha256": "6a063368d940a39a25039c922bc8b2b7c4c163ec5e130aa66cfc204fa0fc0350"
+    },
+    {
+      "nome": "planta-eletrica-001.dxf",
+      "bytes": 15772,
+      "sha256": "ec77363f072cb42fed1208849849b611cd619bac4aac3187003af8b564739b60"
+    },
+    {
+      "nome": "planta-eletrica-001.svg",
+      "bytes": 18169,
+      "sha256": "bd17dd87aed870c605c70a3d446a1c6cd4afdc2721ff372584721ad7e9d4f0de"
+    },
+    {
+      "nome": "planta-eletrica-001.png",
+      "bytes": 59468,
+      "sha256": "3a34876e579741aa01392b7df16e5ac2f37c407310472da0fd0a687b439b697c"
+    },
+    {
+      "nome": "lista-pontos-001.csv",
+      "bytes": 624,
+      "sha256": "084b38dad37209e1d205a89788ea1f18b083a321bba1ee32a629d8df8528a5f6"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+from pathlib import Path
+import hashlib,json,math
+import FreeCAD as App
+import FreeCADGui as Gui
+from PySide import QtCore
+root=Path(__file__).resolve().parent
+source=root/'saida-001/sala-mobiliada-eletrica-001.FCStd'
+before=hashlib.sha256(source.read_bytes()).hexdigest()
+n=1
+while (root/('vista-%03d'%n)).exists(): n+=1
+out=root/('vista-%03d'%n);out.mkdir()
+doc=App.openDocument(str(source))
+App.setActiveDocument(doc.Name)
+doc.ParedeFrente.ViewObject.Visibility=False
+doc.ParedeEsquerda.ViewObject.Visibility=False
+doc.ParedeDireita.ViewObject.Transparency=0
+for group in (doc.TrajetosConceituais,doc.IdentificacoesEletricas):
+    for obj in group.Group: obj.ViewObject.Visibility=False
+Gui.Selection.clearSelection()
+view=Gui.activeDocument().activeView()
+rot=App.Rotation(App.Vector(1,-1,0),App.Vector(1,1,2),App.Vector(-1,-1,1),'ZXY')
+view.setCameraOrientation(rot.Q)
+view.fitAll()
+Gui.updateGui()
+def finish_view():
+    picture=out/'sala-decoracao-001.png'
+    view.saveImage(str(picture),1600,1100,'White')
+    assert hashlib.sha256(source.read_bytes()).hexdigest()==before
+    manifest={'fonte':str(source.relative_to(root)),'fonte_sha256':before,'arquivo':picture.name,'sha256':hashlib.sha256(picture.read_bytes()).hexdigest(),'vista':'Frente e esquerda ocultas; trajetos e etiquetas ocultos; modelo original preservado','pronto_para_publicar':False,'pronto_para_execucao':False}
+    (out/'manifesto-vista-001.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
+QtCore.QTimer.singleShot(1000,finish_view)

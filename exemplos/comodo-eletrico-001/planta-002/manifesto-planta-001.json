@@ -1,0 +1,71 @@
+{
+  "tipo": "planta_eletrica_didatica",
+  "unidade_geometria": "mm",
+  "impressao": "Escala de impressao nao configurada; geometria 1:1 em mm",
+  "camadas": [
+    "ARQUITETURA",
+    "ILUMINACAO",
+    "TOMADAS",
+    "PENDENCIAS",
+    "TEXTOS",
+    "COTAS"
+  ],
+  "entidades_dxf": {
+    "LINE": 116,
+    "CIRCLE": 2,
+    "TEXT": 26
+  },
+  "quantidades": {
+    "lampada": 1,
+    "interruptor": 1,
+    "tomadas": 4
+  },
+  "rotas_com_extremos_conferidos": 7,
+  "hipoteses": [
+    "Quatro tomadas escolhidas para demonstracao, sem calculo normativo",
+    "Alturas dos pontos sao ilustrativas",
+    "Rotas indicam percurso conceitual, sem condutores ou diametro especificado"
+  ],
+  "pendencias": [
+    "Uso do comodo e equipamentos",
+    "Alimentacao, tensao e origem do quadro",
+    "Cargas e potencias",
+    "Divisao e identificacao final dos circuitos",
+    "Condutores, protecoes, aterramento e condicoes de instalacao",
+    "Revisao tecnica e aprovacao humana"
+  ],
+  "pronto_para_publicar": false,
+  "pronto_para_execucao": false,
+  "arquivos": [
+    {
+      "nome": "gerar-planta-002.py",
+      "bytes": 8667,
+      "sha256": "62944b644842d77f50c7131398a33218a52740d5220d173fbf181605d90c955e"
+    },
+    {
+      "nome": "pontos-001.json",
+      "bytes": 2736,
+      "sha256": "c8592b83643648e8957f98eb43b940285a8804b219b8f642b66c0f7111de0a0e"
+    },
+    {
+      "nome": "planta-eletrica-001.dxf",
+      "bytes": 13221,
+      "sha256": "bb1fcca2716d31de813975cf0068d4ed5907457bad82b0c2935566c763b1d675"
+    },
+    {
+      "nome": "planta-eletrica-001.svg",
+      "bytes": 14939,
+      "sha256": "e2e9a051fd359583df8c7e3ac92daf71f006ef11c912099e39e74c4ab13cb287"
+    },
+    {
+      "nome": "planta-eletrica-001.png",
+      "bytes": 63281,
+      "sha256": "b77d99a6e9938b27c5fc6de37d17ea8496f29eb8a5e454c793fbf3af71d2de0c"
+    },
+    {
+      "nome": "lista-pontos-001.csv",
+      "bytes": 624,
+      "sha256": "51a82310168e0de85a0c7e02ad7ee61371bd4bfdcf8bf2f9518652502f63b320"
+    }
+  ]
+}

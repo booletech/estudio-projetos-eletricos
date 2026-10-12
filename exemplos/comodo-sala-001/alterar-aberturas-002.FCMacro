@@ -1,0 +1,75 @@
+# -*- coding: utf-8 -*-
+"""Revisao local: janela atras do sofa e passagem aberta para cozinha."""
+from pathlib import Path
+import hashlib,shutil,json,math
+import FreeCAD as App
+import FreeCADGui as Gui
+import Part
+from PySide import QtCore
+root=Path(__file__).resolve().parent
+source=root/'saida-001/sala-mobiliada-eletrica-001.FCStd'
+source_hash=hashlib.sha256(source.read_bytes()).hexdigest()
+assert source_hash=='59231ea6ec8429fafdd44334205c576b80cb8a382d1e8dca9e5acc8bedead33a'
+n=2
+while (root/('saida-%03d'%n)).exists():n+=1
+out=root/('saida-%03d'%n);out.mkdir()
+copied=out/'fonte-sala-001.FCStd';shutil.copy2(source,copied)
+doc=App.openDocument(str(copied));App.setActiveDocument(doc.Name)
+doc.Label='Sala 5 x 4 m - janela atras do sofa e acesso cozinha'
+# O cortador posterior passa de janela a passagem com acesso desde o piso.
+doc.VaoJanela.Height=2100
+doc.VaoJanela.Placement.Base=App.Vector(1500,3990,0)
+doc.VaoJanela.Label='Vao de passagem cozinha - 1200 x 2100 mm'
+doc.ParedeFundo.Label='Parede posterior - acesso aberto a cozinha'
+cut=doc.addObject('Part::Box','VaoJanelaSofa')
+cut.Length,cut.Width,cut.Height=1200,170,1000
+cut.Placement.Base=App.Vector(2950,-160,1100)
+cut.Label='Janela atras do sofa - 1200 x 1000 - peitoril 1100 mm'
+front=doc.addObject('Part::Cut','ParedeFrenteComJanela')
+front.Base=doc.ParedeFrente;front.Tool=cut;front.Refine=True
+front.Label='Parede frontal - entrada e janela atras do sofa'
+front.ViewObject.ShapeColor=doc.ParedeFrente.ViewObject.ShapeColor
+front.ViewObject.Transparency=65
+for group in doc.ParedeFrente.InList:
+    if group.TypeId=='App::DocumentObjectGroup':group.addObject(front);group.addObject(cut)
+doc.ParedeFrente.ViewObject.Visibility=False;cut.ViewObject.Visibility=False
+# Reutilizar esquadrias na nova abertura; nenhuma fica na passagem.
+for name in ['JanelaLateralE','JanelaLateralD','JanelaInferior','JanelaSuperior','JanelaMontante','Vidro1','Vidro2']:
+    obj=doc.getObject(name);obj.Placement.Base=obj.Placement.Base+App.Vector(1450,-4150,100)
+    obj.ViewObject.Visibility=True
+doc.recompute()
+def verify(document):
+    assert math.isclose(document.ParedeFrenteComJanela.Shape.Volume,1683000000,abs_tol=.1)
+    assert math.isclose(document.ParedeFundo.Shape.Volume,1768500000,abs_tol=.1)
+    assert document.ParedeFundo.Shape.common(document.VaoJanela.Shape).Volume<.001
+    assert document.ParedeFrenteComJanela.Shape.common(document.VaoJanelaSofa.Shape).Volume<.001
+    assert document.Sofa_encosto.Shape.BoundBox.ZMax<1100
+    for name in ['JanelaLateralE','JanelaLateralD','JanelaInferior','JanelaSuperior','JanelaMontante','Vidro1','Vidro2']:
+        bb=document.getObject(name).Shape.BoundBox
+        assert bb.YMin>=-150 and bb.YMax<=0 and bb.XMin>=2950 and bb.XMax<=4150
+    cfg=json.loads((root/'pontos-001.json').read_text(encoding='utf-8'))
+    for p in cfg['pontos']:
+        if p['id']!='A0':assert (document.getObject(p['id']).CentroReferencia-App.Vector(*p['centro_mm'])).Length<.001
+    count=0
+    for obj in document.Objects:
+        if obj.TypeId.startswith('Part::') and obj.ViewObject.Visibility and obj.Name!='A0':
+            assert obj.Shape.isValid() and obj.Shape.Volume>0 and len(obj.Shape.Solids)==1,obj.Name
+            count+=1
+            if obj.Name.startswith('TrechoEletrico'):
+                assert obj.Shape.common(document.VaoJanela.Shape).Volume<.001,obj.Name
+                assert obj.Shape.common(document.VaoJanelaSofa.Shape).Volume<.001,obj.Name
+    return {'solidos_validos':count,'aberturas_livres':True,'janela_acima_do_encosto':True,'esquadrias_reposicionadas':True,'pontos_eletricos_preservados':True,'rotas_sem_intersecao_com_aberturas':True}
+checks=verify(doc)
+Gui.Selection.clearSelection();Gui.activeDocument().activeView().viewAxonometric();Gui.activeDocument().activeView().fitAll()
+model=out/'sala-janela-cozinha-002.FCStd';doc.saveAs(str(model));App.closeDocument(doc.Name)
+doc=App.openDocument(str(model));App.setActiveDocument(doc.Name);doc.recompute();checks=verify(doc)
+Gui.activeDocument().activeView().viewAxonometric();Gui.activeDocument().activeView().fitAll();Gui.updateGui()
+def finish():
+    picture=out/'sala-janela-cozinha-002.png'
+    Gui.getDocument(doc.Name).activeView().saveImage(str(picture),1600,1100,'White')
+    assert hashlib.sha256(source.read_bytes()).hexdigest()==source_hash
+    assert hashlib.sha256(copied.read_bytes()).hexdigest()==source_hash
+    files=[Path(__file__),copied,model,picture]
+    manifest={'fonte':'../saida-001/sala-mobiliada-eletrica-001.FCStd','fonte_sha256':source_hash,'janela':{'largura_mm':1200,'altura_mm':1000,'peitoril_mm':1100,'x_mm':2950,'parede':'atras do sofa'},'passagem_cozinha':{'largura_mm':1200,'altura_mm':2100,'x_mm':1500,'parede':'antiga janela','folha_de_porta':False},'verificacao':checks,'reaberto_no_FreeCAD':True,'pronto_para_execucao':False,'pronto_para_publicar':False,'arquivos':[{'nome':p.name,'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in files]}
+    (out/'manifesto-aberturas-002.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
+QtCore.QTimer.singleShot(1000,finish)

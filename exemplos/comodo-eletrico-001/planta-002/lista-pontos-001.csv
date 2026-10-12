@@ -1,0 +1,9 @@
+﻿id,tipo,x_mm,y_mm,z_mm,controla,observacao
+L1,lampada,2000,1500,2640,,Ponto de luz central; luminaria grafica abaixo do plano do teto
+S1,interruptor,1800,20,1100,L1,Interruptor junto ao lado direito do vao da porta
+T1,tomada,2600,20,300,,Hipotese didatica
+T2,tomada,3980,2200,300,,Hipotese didatica
+T3,tomada,3200,2980,300,,Hipotese didatica
+T4,tomada,20,1800,300,,Hipotese didatica
+D1,caixa_grafica,3960,1500,2500,,Referencia de distribuicao dos trajetos; caixa e separacao de circuitos pendentes
+A0,origem_pendente,4350,1500,2500,,"Chegada conceitual; nao representa quadro, protecao ou alimentacao definidos"

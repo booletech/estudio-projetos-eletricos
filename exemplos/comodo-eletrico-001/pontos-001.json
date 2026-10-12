@@ -1,0 +1,28 @@
+{
+  "tipo": "disposicao_eletrica_didatica",
+  "unidade": "mm",
+  "dimensoes_internas_mm": [4000, 3000, 2700],
+  "hipoteses": ["Quatro tomadas escolhidas para demonstracao, sem calculo normativo", "Alturas dos pontos sao ilustrativas", "Rotas indicam percurso conceitual, sem condutores ou diametro especificado"],
+  "pendencias": ["Uso do comodo e equipamentos", "Alimentacao, tensao e origem do quadro", "Cargas e potencias", "Divisao e identificacao final dos circuitos", "Condutores, protecoes, aterramento e condicoes de instalacao", "Revisao tecnica e aprovacao humana"],
+  "pontos": [
+    {"id": "L1", "tipo": "lampada", "centro_mm": [2000, 1500, 2640], "altura_referencia_mm": 2700, "nota": "Ponto de luz central; luminaria grafica abaixo do plano do teto"},
+    {"id": "S1", "tipo": "interruptor", "centro_mm": [1800, 20, 1100], "controla": "L1", "nota": "Interruptor junto ao lado direito do vao da porta"},
+    {"id": "T1", "tipo": "tomada", "centro_mm": [2600, 20, 300]},
+    {"id": "T2", "tipo": "tomada", "centro_mm": [3980, 2200, 300]},
+    {"id": "T3", "tipo": "tomada", "centro_mm": [3200, 2980, 300]},
+    {"id": "T4", "tipo": "tomada", "centro_mm": [20, 1800, 300]},
+    {"id": "D1", "tipo": "caixa_grafica", "centro_mm": [3960, 1500, 2500], "nota": "Referencia de distribuicao dos trajetos; caixa e separacao de circuitos pendentes"},
+    {"id": "A0", "tipo": "origem_pendente", "centro_mm": [4350, 1500, 2500], "nota": "Chegada conceitual; nao representa quadro, protecao ou alimentacao definidos"}
+  ],
+  "rotas": [
+    {"id": "R0", "grupo": "origem_pendente", "de": "A0", "para": "D1", "vertices_mm": [[4350,1500,2500],[3960,1500,2500]]},
+    {"id": "RL1", "grupo": "iluminacao", "de": "D1", "para": "L1", "vertices_mm": [[3960,1500,2500],[3960,1500,2640],[2000,1500,2640]]},
+    {"id": "RS1", "grupo": "comando", "de": "L1", "para": "S1", "vertices_mm": [[2000,1500,2640],[1800,1500,2640],[1800,20,2640],[1800,20,1100]]},
+    {"id": "RT1", "grupo": "tomadas", "de": "D1", "para": "T1", "vertices_mm": [[3960,1500,2500],[3960,1500,2400],[3980,1500,2400],[3980,20,2400],[2600,20,2400],[2600,20,300]]},
+    {"id": "RT2", "grupo": "tomadas", "de": "D1", "para": "T2", "vertices_mm": [[3960,1500,2500],[3960,1500,2400],[3980,1500,2400],[3980,2200,2400],[3980,2200,300]]},
+    {"id": "RT3", "grupo": "tomadas", "de": "D1", "para": "T3", "vertices_mm": [[3960,1500,2500],[3960,1500,2400],[3980,1500,2400],[3980,2980,2400],[3200,2980,2400],[3200,2980,300]]},
+    {"id": "RT4", "grupo": "tomadas", "de": "D1", "para": "T4", "vertices_mm": [[3960,1500,2500],[3960,1500,2400],[3980,1500,2400],[3980,20,2400],[20,20,2400],[20,1800,2400],[20,1800,300]]}
+  ],
+  "pronto_para_publicar": false,
+  "pronto_para_execucao": false
+}

@@ -24,6 +24,13 @@ casa completa, dimensionamento ou aprovação técnica de instalações.
 Os perfis anteriores continuam úteis para pesquisa; suas restrições de fase
 devem ser interpretadas com esta autorização mais recente.
 
+O pedido seguinte autorizou desenhar a instalação elétrica didática desse
+cômodo, com uma lâmpada, um interruptor e tomadas, e guardar os arquivos no
+GitHub. O estudo em `exemplos/comodo-eletrico-001/` inclui uma luz, um
+interruptor, quatro tomadas ilustrativas, trajetos conceituais, modelo 3D e
+planta 2D. Essa autorização é de desenho e documentação; as pendências de
+alimentação, cargas, circuitos, condutores, proteções e revisão permanecem.
+
 ## Escopo e autorização
 
 Trabalhar neste repositório elétrico. O usuário autorizou sua inicialização e

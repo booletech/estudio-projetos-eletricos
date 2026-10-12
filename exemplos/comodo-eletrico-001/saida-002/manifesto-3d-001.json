@@ -1,0 +1,61 @@
+{
+  "tipo": "estudo_eletrico_conceitual",
+  "software": "FreeCAD",
+  "versao": "1.1.4",
+  "fonte_preservada_sha256": "81a0be19aa58bcb56289ed640e3e1360ae255ff5802be3cbbdf37c13a7cfc7d5",
+  "configuracao": "../pontos-001.json",
+  "verificacao": {
+    "pontos": {
+      "lampada": 1,
+      "interruptor": 1,
+      "tomada": 4
+    },
+    "controle_S1_L1": true,
+    "solidos_validos": 41,
+    "rotas_com_extremos_conferidos": 7,
+    "segmentos_3d_unicos": 18
+  },
+  "reaberto_no_FreeCAD": true,
+  "hipoteses": [
+    "Quatro tomadas escolhidas para demonstracao, sem calculo normativo",
+    "Alturas dos pontos sao ilustrativas",
+    "Rotas indicam percurso conceitual, sem condutores ou diametro especificado"
+  ],
+  "pendencias": [
+    "Uso do comodo e equipamentos",
+    "Alimentacao, tensao e origem do quadro",
+    "Cargas e potencias",
+    "Divisao e identificacao final dos circuitos",
+    "Condutores, protecoes, aterramento e condicoes de instalacao",
+    "Revisao tecnica e aprovacao humana"
+  ],
+  "pronto_para_publicar": false,
+  "pronto_para_execucao": false,
+  "arquivos": [
+    {
+      "nome": "adicionar-eletrica-002.FCMacro",
+      "bytes": 8060,
+      "sha256": "3fc16afed6f7f2090141277827322a1904e47cf776a98ed9d85b7efd07eff5a7"
+    },
+    {
+      "nome": "pontos-001.json",
+      "bytes": 2736,
+      "sha256": "c8592b83643648e8957f98eb43b940285a8804b219b8f642b66c0f7111de0a0e"
+    },
+    {
+      "nome": "fonte-comodo-001.FCStd",
+      "bytes": 47382,
+      "sha256": "81a0be19aa58bcb56289ed640e3e1360ae255ff5802be3cbbdf37c13a7cfc7d5"
+    },
+    {
+      "nome": "comodo-eletrico-001.FCStd",
+      "bytes": 81343,
+      "sha256": "7a6db3c5f7b232c1d960945c42de7ce58c4b1a34a15f0800213a961cb7149f59"
+    },
+    {
+      "nome": "comodo-eletrico-isometrico-001.png",
+      "bytes": 55244,
+      "sha256": "24937bc36b19b9429ed6e8e3a292a6b967ff1e633bf6beb8254ceea33beb9d82"
+    }
+  ]
+}

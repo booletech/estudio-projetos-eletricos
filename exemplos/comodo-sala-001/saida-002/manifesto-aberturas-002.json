@@ -1,0 +1,51 @@
+{
+  "fonte": "../saida-001/sala-mobiliada-eletrica-001.FCStd",
+  "fonte_sha256": "59231ea6ec8429fafdd44334205c576b80cb8a382d1e8dca9e5acc8bedead33a",
+  "janela": {
+    "largura_mm": 1200,
+    "altura_mm": 1000,
+    "peitoril_mm": 1100,
+    "x_mm": 2950,
+    "parede": "atras do sofa"
+  },
+  "passagem_cozinha": {
+    "largura_mm": 1200,
+    "altura_mm": 2100,
+    "x_mm": 1500,
+    "parede": "antiga janela",
+    "folha_de_porta": false
+  },
+  "verificacao": {
+    "solidos_validos": 114,
+    "aberturas_livres": true,
+    "janela_acima_do_encosto": true,
+    "esquadrias_reposicionadas": true,
+    "pontos_eletricos_preservados": true,
+    "rotas_sem_intersecao_com_aberturas": true
+  },
+  "reaberto_no_FreeCAD": true,
+  "pronto_para_execucao": false,
+  "pronto_para_publicar": false,
+  "arquivos": [
+    {
+      "nome": "alterar-aberturas-002.FCMacro",
+      "bytes": 5153,
+      "sha256": "f1562fdca65d292dc3db90601a35f2d9e8c36b3c996cfe0532921ac1b8e1a991"
+    },
+    {
+      "nome": "fonte-sala-001.FCStd",
+      "bytes": 190361,
+      "sha256": "59231ea6ec8429fafdd44334205c576b80cb8a382d1e8dca9e5acc8bedead33a"
+    },
+    {
+      "nome": "sala-janela-cozinha-002.FCStd",
+      "bytes": 197138,
+      "sha256": "4b5dcf7acd862175e21f8ea037e1497b6efbad27745cdff7296a78ff5f1ff8a0"
+    },
+    {
+      "nome": "sala-janela-cozinha-002.png",
+      "bytes": 82914,
+      "sha256": "e390eaedc19dbd5ae8e94e108b3a23f98a50714ec52c0c20800234bbeb2c24ef"
+    }
+  ]
+}
