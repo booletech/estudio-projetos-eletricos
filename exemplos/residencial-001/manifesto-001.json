@@ -1,0 +1,26 @@
+{
+  "data": "2026-10-12",
+  "tipo": "estudo sintetico didatico",
+  "arquivos": [
+    {
+      "arquivo": "planta-residencial-001.dxf",
+      "sha256": "b109de12e86bf95544a44af03fbc2915db79ee4d0f61b29cf497aefa7d1988af",
+      "origem": "copia do exemplo sintetico criado nesta conversa"
+    },
+    {
+      "arquivo": "quadro-residencial-001.qet",
+      "sha256": "f8ea1e773609f3e9a6129d8ad722a6d2c9c0f874334ef4a5203c0e2e556aa6bb",
+      "origem": "copia do exemplo sintetico criado nesta conversa"
+    }
+  ],
+  "pronto_para_publicar": false,
+  "pronto_para_execucao": false,
+  "pendencias": [
+    "dimensionamento",
+    "simbologia",
+    "renderizacao integral",
+    "exportacao",
+    "revisao tecnica",
+    "aprovacao final"
+  ]
+}

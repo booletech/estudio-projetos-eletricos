@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project title="Residencia 48 m2 - estudo 001" version="0.100">
+  <newdiagrams>
+    <border colsize="60" rows="8" rowsize="80" cols="17" displayrows="true" displaycols="true" />
+    <inset displayAt="bottom" title="ESTUDO DIDATICO - REVISAO TECNICA PENDENTE" author="" version="" folio="%id/%total" auto_page_num="" date="20100921" indexrev="" locmach="" plant="" filename="741.qet" />
+    <conductors condsize="1" text_color="#000000" cable="" function="" vertical-alignment="AlignRight" horizontal-alignment="AlignBottom" numsize="9" num="" formula="" displaytext="1" dash-size="1" color2="#000000" conductor_color="" tension_protocol="" horizrotatetext="0" type="multi" onetextperfolio="0" bicolor="false" conductor_section="" bus="" vertirotatetext="0" />
+    <report label="%f-%l%c" />
+    <xrefs>
+      <xref xrefpos="AlignBaseline" type="coil" delayprefix="" displayhas="contacts" slave_label="(%f-%l%c)" switchprefix="" offset="40" powerprefix="" snapto="bottom" showpowerctc="false" master_label="%f-%l%c" />
+      <xref xrefpos="AlignBaseline" type="protection" delayprefix="" displayhas="cross" slave_label="(%f-%l%c)" switchprefix="" offset="40" powerprefix="" snapto="label" showpowerctc="false" master_label="%f-%l%c" />
+      <xref xrefpos="" type="commutator" delayprefix="" displayhas="cross" slave_label="(%f-%l%c)" switchprefix="" offset="0" powerprefix="" snapto="label" showpowerctc="false" master_label="%f-%l%c" />
+    </xrefs>
+    <conductors_autonums current_autonum="" freeze_new_conductors="false" />
+    <folio_autonums />
+    <element_autonums current_autonum="" freeze_new_elements="false" />
+  </newdiagrams>
+  <diagram author="" version="0.100" rows="8" locmach="" title="QD-01 - organizacao conceitual dos circuitos" rowsize="80" plant="" indexrev="" displaycols="true" order="1" displayAt="bottom" colsize="60" auto_page_num="" date="20261012" height="660" cols="17" folio="%id/%total" freezeNewConductor="false" displayrows="true" filename="quadro-residencial-001.qet" freezeNewElement="false">
+    <defaultconductor condsize="1" text_color="#000000" cable="" function="" vertical-alignment="AlignRight" horizontal-alignment="AlignBottom" numsize="9" num="" formula="" displaytext="1" dash-size="1" color2="#000000" conductor_color="" tension_protocol="" horizrotatetext="0" type="multi" onetextperfolio="0" bicolor="false" conductor_section="" bus="" vertirotatetext="0" />
+    <elements>
+      <element x="490" y="150" type="embed://import/disjuntor.elmt" uuid="{3c843a67-6153-45e2-8718-38d48820b5bd}" prefix="" orientation="0" freezeLabel="false" z="10">
+        <terminals>
+          <terminal id="0" x="0" y="-20" orientation="0" />
+          <terminal id="1" x="0" y="20" orientation="2" />
+        </terminals>
+        <inputs />
+        <elementInformations>
+          <elementInformation show="1" name="label">Q0 - a definir</elementInformation>
+        </elementInformations>
+        <dynamic_texts>
+          <dynamic_elmt_text x="20" y="-12" rotation="0" frame="false" Halignment="AlignLeft" Valignment="AlignTop" font="Arial,9,-1,5,50,0,0,0,0,0,Regular" uuid="{9e97fb5e-ef13-42da-826e-20c060ea50a6}" text_width="-1" keep_visual_rotation="true" text_from="ElementInfo">
+            <text>Q0 - a definir</text>
+            <info_name>label</info_name>
+          </dynamic_elmt_text>
+        </dynamic_texts>
+        <texts_groups />
+      </element>
+      <element x="190" y="330" type="embed://import/disjuntor.elmt" uuid="{8642b28d-3d2c-42ec-8f40-aca3d1dd097d}" prefix="" orientation="0" freezeLabel="false" z="10">
+        <terminals>
+          <terminal id="2" x="0" y="-20" orientation="0" />
+          <terminal id="3" x="0" y="20" orientation="2" />
+        </terminals>
+        <inputs />
+        <elementInformations>
+          <elementInformation show="1" name="label">QF1</elementInformation>
+        </elementInformations>
+        <dynamic_texts>
+          <dynamic_elmt_text x="20" y="-12" rotation="0" frame="false" Halignment="AlignLeft" Valignment="AlignTop" font="Arial,9,-1,5,50,0,0,0,0,0,Regular" uuid="{48fd87f8-132d-42e6-aa8d-cbbceee64eb3}" text_width="-1" keep_visual_rotation="true" text_from="ElementInfo">
+            <text>QF1</text>
+            <info_name>label</info_name>
+          </dynamic_elmt_text>
+        </dynamic_texts>
+        <texts_groups />
+      </element>
+      <element x="190" y="460" type="embed://import/saida.elmt" uuid="{422aa044-2905-4983-a667-fd516a22e440}" prefix="" orientation="0" freezeLabel="false" z="10">
+        <terminals>
+          <terminal id="4" x="0" y="-20" orientation="0" />
+        </terminals>
+        <inputs />
+        <elementInformations>
+          <elementInformation show="1" name="label">C1</elementInformation>
+        </elementInformations>
+        <dynamic_texts>
+          <dynamic_elmt_text x="20" y="-12" rotation="0" frame="false" Halignment="AlignLeft" Valignment="AlignTop" font="Arial,9,-1,5,50,0,0,0,0,0,Regular" uuid="{d5f104e2-f01c-4a5b-9338-c45f9781af33}" text_width="-1" keep_visual_rotation="true" text_from="ElementInfo">
+            <text>C1</text>
+            <info_name>label</info_name>
+          </dynamic_elmt_text>
+        </dynamic_texts>
+        <texts_groups />
+      </element>
+      <element x="390" y="330" type="embed://import/disjuntor.elmt" uuid="{c0ac5d7b-f2f1-4d47-b43f-a0b11b47d66d}" prefix="" orientation="0" freezeLabel="false" z="10">
+        <terminals>
+          <terminal id="5" x="0" y="-20" orientation="0" />
+          <terminal id="6" x="0" y="20" orientation="2" />
+        </terminals>
+        <inputs />
+        <elementInformations>
+          <elementInformation show="1" name="label">QF2</elementInformation>
+        </elementInformations>
+        <dynamic_texts>
+          <dynamic_elmt_text x="20" y="-12" rotation="0" frame="false" Halignment="AlignLeft" Valignment="AlignTop" font="Arial,9,-1,5,50,0,0,0,0,0,Regular" uuid="{fa8f8da4-c62a-46e5-ba03-3d2a2eca5aff}" text_width="-1" keep_visual_rotation="true" text_from="ElementInfo">
+            <text>QF2</text>
+            <info_name>label</info_name>
+          </dynamic_elmt_text>
+        </dynamic_texts>
+        <texts_groups />
+      </element>
+      <element x="390" y="460" type="embed://import/saida.elmt" uuid="{4d5483ba-1cd7-4fc0-9897-4e26b494038f}" prefix="" orientation="0" freezeLabel="false" z="10">
+        <terminals>
+          <terminal id="7" x="0" y="-20" orientation="0" />
+        </terminals>
+        <inputs />
+        <elementInformations>
+          <elementInformation show="1" name="label">C2</elementInformation>
+        </elementInformations>
+        <dynamic_texts>
+          <dynamic_elmt_text x="20" y="-12" rotation="0" frame="false" Halignment="AlignLeft" Valignment="AlignTop" font="Arial,9,-1,5,50,0,0,0,0,0,Regular" uuid="{3e225add-2ad4-42de-ac2c-632352432b60}" text_width="-1" keep_visual_rotation="true" text_from="ElementInfo">
+            <text>C2</text>
+            <info_name>label</info_name>
+          </dynamic_elmt_text>
+        </dynamic_texts>
+        <texts_groups />
+      </element>
+      <element x="590" y="330" type="embed://import/disjuntor.elmt" uuid="{1fe51480-6f34-4d0c-9ef0-a68b8a9515b2}" prefix="" orientation="0" freezeLabel="false" z="10">
+        <terminals>
+          <terminal id="8" x="0" y="-20" orientation="0" />
+          <terminal id="9" x="0" y="20" orientation="2" />
+        </terminals>
+        <inputs />
+        <elementInformations>
+          <elementInformation show="1" name="label">QF3</elementInformation>
+        </elementInformations>
+        <dynamic_texts>
+          <dynamic_elmt_text x="20" y="-12" rotation="0" frame="false" Halignment="AlignLeft" Valignment="AlignTop" font="Arial,9,-1,5,50,0,0,0,0,0,Regular" uuid="{35c72dbe-d15e-445d-a63a-613608be7f7f}" text_width="-1" keep_visual_rotation="true" text_from="ElementInfo">
+            <text>QF3</text>
+            <info_name>label</info_name>
+          </dynamic_elmt_text>
+        </dynamic_texts>
+        <texts_groups />
+      </element>
+      <element x="590" y="460" type="embed://import/saida.elmt" uuid="{d2a4f4b6-0efb-46c6-86ba-a4a3f86e1809}" prefix="" orientation="0" freezeLabel="false" z="10">
+        <terminals>
+          <terminal id="10" x="0" y="-20" orientation="0" />
+        </terminals>
+        <inputs />
+        <elementInformations>
+          <elementInformation show="1" name="label">C3</elementInformation>
+        </elementInformations>
+        <dynamic_texts>
+          <dynamic_elmt_text x="20" y="-12" rotation="0" frame="false" Halignment="AlignLeft" Valignment="AlignTop" font="Arial,9,-1,5,50,0,0,0,0,0,Regular" uuid="{874b626b-4df7-48b2-885b-a4fbfdde590b}" text_width="-1" keep_visual_rotation="true" text_from="ElementInfo">
+            <text>C3</text>
+            <info_name>label</info_name>
+          </dynamic_elmt_text>
+        </dynamic_texts>
+        <texts_groups />
+      </element>
+      <element x="790" y="330" type="embed://import/disjuntor.elmt" uuid="{bbad8961-118a-47f0-9173-3e348504d16f}" prefix="" orientation="0" freezeLabel="false" z="10">
+        <terminals>
+          <terminal id="11" x="0" y="-20" orientation="0" />
+          <terminal id="12" x="0" y="20" orientation="2" />
+        </terminals>
+        <inputs />
+        <elementInformations>
+          <elementInformation show="1" name="label">QF4</elementInformation>
+        </elementInformations>
+        <dynamic_texts>
+          <dynamic_elmt_text x="20" y="-12" rotation="0" frame="false" Halignment="AlignLeft" Valignment="AlignTop" font="Arial,9,-1,5,50,0,0,0,0,0,Regular" uuid="{58899c75-593d-43c0-a6ac-b080ad81690a}" text_width="-1" keep_visual_rotation="true" text_from="ElementInfo">
+            <text>QF4</text>
+            <info_name>label</info_name>
+          </dynamic_elmt_text>
+        </dynamic_texts>
+        <texts_groups />
+      </element>
+      <element x="790" y="460" type="embed://import/saida.elmt" uuid="{30aa955e-75e0-4131-b78c-167814e426b8}" prefix="" orientation="0" freezeLabel="false" z="10">
+        <terminals>
+          <terminal id="13" x="0" y="-20" orientation="0" />
+        </terminals>
+        <inputs />
+        <elementInformations>
+          <elementInformation show="1" name="label">C4</elementInformation>
+        </elementInformations>
+        <dynamic_texts>
+          <dynamic_elmt_text x="20" y="-12" rotation="0" frame="false" Halignment="AlignLeft" Valignment="AlignTop" font="Arial,9,-1,5,50,0,0,0,0,0,Regular" uuid="{049643c2-9bb1-416b-9c1c-b7fdad4e5b5c}" text_width="-1" keep_visual_rotation="true" text_from="ElementInfo">
+            <text>C4</text>
+            <info_name>label</info_name>
+          </dynamic_elmt_text>
+        </dynamic_texts>
+        <texts_groups />
+      </element>
+    </elements>
+    <conductors>
+      <conductor condsize="1" text_color="#000000" cable="" function="" vertical-alignment="AlignRight" x="0" horizontal-alignment="AlignBottom" numsize="9" terminal1="1" num="" terminal2="2" formula="" displaytext="0" dash-size="1" color2="#000000" y="0" conductor_color="" freezeLabel="false" tension_protocol="" horizrotatetext="0" type="multi" onetextperfolio="0" bicolor="false" conductor_section="" bus="" vertirotatetext="0">
+        <segment orientation="vertical" length="70" />
+        <segment orientation="horizontal" length="-300" />
+        <segment orientation="vertical" length="70" />
+        <sequentialNumbers />
+      </conductor>
+      <conductor condsize="1" text_color="#000000" cable="" function="" vertical-alignment="AlignRight" x="0" horizontal-alignment="AlignBottom" numsize="9" terminal1="3" num="" terminal2="4" formula="" displaytext="0" dash-size="1" color2="#000000" y="0" conductor_color="" freezeLabel="false" tension_protocol="" horizrotatetext="0" type="multi" onetextperfolio="0" bicolor="false" conductor_section="" bus="" vertirotatetext="0">
+        <segment orientation="vertical" length="90" />
+        <sequentialNumbers />
+      </conductor>
+      <conductor condsize="1" text_color="#000000" cable="" function="" vertical-alignment="AlignRight" x="0" horizontal-alignment="AlignBottom" numsize="9" terminal1="1" num="" terminal2="5" formula="" displaytext="0" dash-size="1" color2="#000000" y="0" conductor_color="" freezeLabel="false" tension_protocol="" horizrotatetext="0" type="multi" onetextperfolio="0" bicolor="false" conductor_section="" bus="" vertirotatetext="0">
+        <segment orientation="vertical" length="70" />
+        <segment orientation="horizontal" length="-100" />
+        <segment orientation="vertical" length="70" />
+        <sequentialNumbers />
+      </conductor>
+      <conductor condsize="1" text_color="#000000" cable="" function="" vertical-alignment="AlignRight" x="0" horizontal-alignment="AlignBottom" numsize="9" terminal1="6" num="" terminal2="7" formula="" displaytext="0" dash-size="1" color2="#000000" y="0" conductor_color="" freezeLabel="false" tension_protocol="" horizrotatetext="0" type="multi" onetextperfolio="0" bicolor="false" conductor_section="" bus="" vertirotatetext="0">
+        <segment orientation="vertical" length="90" />
+        <sequentialNumbers />
+      </conductor>
+      <conductor condsize="1" text_color="#000000" cable="" function="" vertical-alignment="AlignRight" x="0" horizontal-alignment="AlignBottom" numsize="9" terminal1="1" num="" terminal2="8" formula="" displaytext="0" dash-size="1" color2="#000000" y="0" conductor_color="" freezeLabel="false" tension_protocol="" horizrotatetext="0" type="multi" onetextperfolio="0" bicolor="false" conductor_section="" bus="" vertirotatetext="0">
+        <segment orientation="vertical" length="70" />
+        <segment orientation="horizontal" length="100" />
+        <segment orientation="vertical" length="70" />
+        <sequentialNumbers />
+      </conductor>
+      <conductor condsize="1" text_color="#000000" cable="" function="" vertical-alignment="AlignRight" x="0" horizontal-alignment="AlignBottom" numsize="9" terminal1="9" num="" terminal2="10" formula="" displaytext="0" dash-size="1" color2="#000000" y="0" conductor_color="" freezeLabel="false" tension_protocol="" horizrotatetext="0" type="multi" onetextperfolio="0" bicolor="false" conductor_section="" bus="" vertirotatetext="0">
+        <segment orientation="vertical" length="90" />
+        <sequentialNumbers />
+      </conductor>
+      <conductor condsize="1" text_color="#000000" cable="" function="" vertical-alignment="AlignRight" x="0" horizontal-alignment="AlignBottom" numsize="9" terminal1="1" num="" terminal2="11" formula="" displaytext="0" dash-size="1" color2="#000000" y="0" conductor_color="" freezeLabel="false" tension_protocol="" horizrotatetext="0" type="multi" onetextperfolio="0" bicolor="false" conductor_section="" bus="" vertirotatetext="0">
+        <segment orientation="vertical" length="70" />
+        <segment orientation="horizontal" length="300" />
+        <segment orientation="vertical" length="70" />
+        <sequentialNumbers />
+      </conductor>
+      <conductor condsize="1" text_color="#000000" cable="" function="" vertical-alignment="AlignRight" x="0" horizontal-alignment="AlignBottom" numsize="9" terminal1="12" num="" terminal2="13" formula="" displaytext="0" dash-size="1" color2="#000000" y="0" conductor_color="" freezeLabel="false" tension_protocol="" horizrotatetext="0" type="multi" onetextperfolio="0" bicolor="false" conductor_section="" bus="" vertirotatetext="0">
+        <segment orientation="vertical" length="90" />
+        <sequentialNumbers />
+      </conductor>
+    </conductors>
+    <inputs>
+      <input x="370" y="75" rotation="0" font="Arial,14,-1,5,50,0,0,0,0,0,Regular" text="&lt;html&gt;&lt;body style=&quot;font-family:Arial;font-size:14pt&quot;&gt;&lt;p&gt;ALIMENTACAO - A DEFINIR&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;" />
+      <input x="105" y="500" rotation="0" font="Arial,10,-1,5,50,0,0,0,0,0,Regular" text="&lt;html&gt;&lt;body style=&quot;font-family:Arial;font-size:10pt&quot;&gt;&lt;p&gt;C1: Iluminacao&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;" />
+      <input x="305" y="500" rotation="0" font="Arial,10,-1,5,50,0,0,0,0,0,Regular" text="&lt;html&gt;&lt;body style=&quot;font-family:Arial;font-size:10pt&quot;&gt;&lt;p&gt;C2: Sala / quarto&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;" />
+      <input x="505" y="500" rotation="0" font="Arial,10,-1,5,50,0,0,0,0,0,Regular" text="&lt;html&gt;&lt;body style=&quot;font-family:Arial;font-size:10pt&quot;&gt;&lt;p&gt;C3: Cozinha / servico&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;" />
+      <input x="735" y="500" rotation="0" font="Arial,10,-1,5,50,0,0,0,0,0,Regular" text="&lt;html&gt;&lt;body style=&quot;font-family:Arial;font-size:10pt&quot;&gt;&lt;p&gt;C4: Banheiro&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;" />
+      <input x="75" y="555" rotation="0" font="Arial,11,-1,5,50,0,0,0,0,0,Regular" text="&lt;html&gt;&lt;body style=&quot;font-family:Arial;font-size:11pt&quot;&gt;&lt;p&gt;EXEMPLO CONCEITUAL: linhas representam a organizacao dos circuitos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;" />
+      <input x="75" y="580" rotation="0" font="Arial,11,-1,5,50,0,0,0,0,0,Regular" text="&lt;html&gt;&lt;body style=&quot;font-family:Arial;font-size:11pt&quot;&gt;&lt;p&gt;Nao representa todos os polos, neutro ou PE. DR/DPS e aterramento pendentes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;" />
+      <input x="75" y="605" rotation="0" font="Arial,11,-1,5,50,0,0,0,0,0,Regular" text="&lt;html&gt;&lt;body style=&quot;font-family:Arial;font-size:11pt&quot;&gt;&lt;p&gt;Tensao, cargas, bitolas e protecoes: dimensionamento e revisao pendentes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;" />
+      <input x="75" y="630" rotation="0" font="Arial,14,-1,5,50,0,0,0,0,0,Regular" text="&lt;html&gt;&lt;body style=&quot;font-family:Arial;font-size:14pt&quot;&gt;&lt;p&gt;RASCUNHO - NAO LIBERADO PARA EXECUCAO&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;" />
+    </inputs>
+  </diagram>
+  <collection>
+    <category name="import">
+      <names>
+        <name lang="pt">Elementos do estudo</name>
+      </names>
+      <element name="disjuntor.elmt">
+        <definition version="0.100.0" type="element" link_type="master" width="20" height="60" hotspot_x="9" hotspot_y="30">
+          <uuid uuid="{fb584aa9-2af6-6bbb-b4f1-8d0486c07670}" />
+          <names>
+            <name lang="ar">قاطع</name>
+            <name lang="ca">Interruptor</name>
+            <name lang="cs">Vypínač</name>
+            <name lang="de">Lastschalter 1P</name>
+            <name lang="en">Circuit-breaker</name>
+            <name lang="es">Disyuntor</name>
+            <name lang="fr">Disjoncteur</name>
+            <name lang="it">Sezionatore 1P</name>
+            <name lang="nl">Lastscheider 1</name>
+            <name lang="pl">Wyłącznik</name>
+            <name lang="pt">Disjuntor</name>
+            <name lang="ru">Выключатель</name>
+          </names>
+          <kindInformations>
+            <kindInformation name="type">protection</kindInformation>
+          </kindInformations>
+          <informations>Author: The QElectroTech team
+License: see http://qelectrotech.org/wiki/doc/elements_license</informations>
+          <description>
+            <dynamic_text x="2.75" y="-9.5" z="1" text_width="-1" Halignment="AlignLeft" Valignment="AlignTop" frame="false" rotation="0" keep_visual_rotation="false" text_from="ElementInfo" uuid="{b5acbe58-4754-4302-9694-1a7ea0ccad06}" font="Liberation Sans,9,-1,5,50,0,0,0,0,0,Regular">
+              <text />
+              <info_name>label</info_name>
+            </dynamic_text>
+            <polygon x1="0" y1="20" x2="0" y2="10" x3="-5" y3="-10" closed="false" antialias="true" style="line-style:normal;line-weight:normal;filling:none;color:black" />
+            <line x1="0" y1="-20" x2="0" y2="-10" end1="none" end2="none" length1="1.5" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="false" />
+            <line x1="2" y1="-8" x2="-2" y2="-12" end1="none" end2="none" length1="1.5" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="false" />
+            <line x1="2" y1="-12" x2="-2" y2="-8" end1="none" end2="none" length1="1.5" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="false" />
+            <text text="1" x="2" y="-14" rotation="0" font="Liberation Sans,4,-1,5,50,0,0,0,0,0,Regular" color="#000000" />
+            <text text="2" x="3" y="18" rotation="0" font="Liberation Sans,4,-1,5,50,0,0,0,0,0,Regular" color="#000000" />
+            <terminal uuid="{4e7a9570-9e8c-479a-a93e-885e5eb61fbd}" name="" x="0" y="-20" orientation="n" type="Generic" />
+            <terminal uuid="{1a054f15-da3d-40a8-af9b-bf78bfe06a88}" name="" x="0" y="20" orientation="s" type="Generic" />
+          </description>
+        </definition>
+      </element>
+      <element name="saida.elmt">
+        <definition version="0.100" type="element" width="70" height="50" hotspot_x="35" hotspot_y="25">
+          <names>
+            <name lang="pt">Saida conceitual - exemplo</name>
+          </names>
+          <informations>Simbolo generico autoral para estudo; nao representa equipamento especifico.</informations>
+          <description>
+            <rect x="-30" y="-10" width="60" height="30" antialias="false" style="line-style:normal;line-weight:normal;filling:none;color:black" />
+            <line x1="0" y1="-20" x2="0" y2="-10" end1="none" end2="none" length1="1.5" length2="1.5" antialias="false" style="line-style:normal;line-weight:normal;filling:none;color:black" />
+            <terminal uuid="{5f71a6be-f04b-43b5-9651-a0f73dff9d5f}" name="" x="0" y="-20" orientation="n" type="Generic" />
+          </description>
+        </definition>
+      </element>
+    </category>
+  </collection>
+</project>

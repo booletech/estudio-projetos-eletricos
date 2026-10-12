@@ -1,0 +1,22 @@
+# Ambiente local e programas
+.venv/
+tools/
+local/
+__pycache__/
+*.pyc
+*.egg-info/
+.env
+.env.*
+*.key
+*.pem
+*.log
+# CAD: arquivos temporários e cópias automáticas
+\#*
+*.bak
+*.autosave
+*.tmp
+*.dxf~
+*.qet~
+# Dados particulares não versionados
+clientes/
+originais/
