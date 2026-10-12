@@ -1,0 +1,62 @@
+# Estúdio de projetos elétricos
+
+Projetos elétricos residenciais e industriais com LibreCAD e QElectroTech,
+bibliotecas, modelos, scripts e instruções de apoio para agentes.
+
+## Estado inicial
+
+A primeira amostra é uma residência esquemática de 8 × 6 m (48 m²), com sala,
+quarto, cozinha, área de serviço e banheiro. A planta contém cinco pontos de
+iluminação, oito tomadas genéricas, cinco interruptores e o quadro QD-01.
+O estudo de quadro organiza quatro circuitos conceituais.
+
+- [Planta editável no LibreCAD](exemplos/residencial-001/planta-residencial-001.dxf)
+- [Diagrama editável no QElectroTech](exemplos/residencial-001/quadro-residencial-001.qet)
+- [Manifesto de preservação](exemplos/residencial-001/manifesto-001.json)
+- [Verificações e limitações](docs/VERIFICACAO-001.md)
+- [Próximos trabalhos](docs/PENDENCIAS.md)
+
+**Rascunhos didáticos: não liberados para execução, orçamento final ou entrega
+como projeto técnico aprovado.** Potências, bitolas, proteções, DR/DPS,
+aterramento, trajetos executivos e revisão técnica estão pendentes.
+
+## Organização
+
+`exemplos/` guarda material sintético. `projetos/` recebe somente material
+expressamente autorizado e sem dados pessoais. `agentes/` guarda instruções
+versionadas. `scripts/` guarda ferramentas locais. `docs/` registra decisões,
+verificações e pendências. `local/`, `tools/` e `.venv/` ficam fora do Git.
+
+## Ferramentas
+
+- LibreCAD 2.2.1.5: https://librecad.org/
+- QElectroTech 0.100: https://qelectrotech.org/
+
+Nesta máquina, as cópias locais estão em `../tools/`, dentro do diretório de
+trabalho original. Os programas e seus instaladores não são distribuídos por
+este repositório. Consulte [o registro de ferramentas](docs/FERRAMENTAS.md).
+
+Para verificar a cópia inicial, execute a partir desta pasta:
+
+```powershell
+& '..\.venv\Scripts\python.exe' '.\scripts\verificar_exemplos.py'
+```
+
+Em outra máquina, use um Python isolado em `.venv`; a verificação usa somente
+a biblioteca padrão. Ela verifica integridade e estrutura, sem certificação
+elétrica ou validação visual integral.
+
+## Atualizações
+
+A rotina diária verifica alterações autorizadas, executa as verificações
+aplicáveis e envia um commit descritivo quando houver mudança real. Não cria
+commits vazios. Seu agendamento é configurado no Codex, fora do repositório.
+As regras estão em [AGENTS.md](AGENTS.md) e [no fluxo de versionamento](docs/VERSIONAMENTO.md).
+
+## Direitos
+
+O símbolo de disjuntor incorporado ao QET é da biblioteca do QElectroTech;
+os créditos e a informação de licença permanecem no arquivo. O uso desses
+elementos dentro de diagramas é permitido pela licença da coleção:
+https://github.com/qelectrotech/qelectrotech-elements/blob/main/ELEMENTS.LICENSE
+Nenhuma licença geral sobre projetos de clientes é concedida automaticamente.
