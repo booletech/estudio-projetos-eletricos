@@ -1,0 +1,14 @@
+{
+  "revision": 3,
+  "source_path": "exemplos/comodo-sala-001/saida-001/sala-mobiliada-eletrica-001.FCStd",
+  "source_sha256": "e7436164e356f020bb6379edd168968fbbd25eefb4d0fdc7421c8a647e7fcda5",
+  "file": "sala-mobiliada-preservada-003.FCStd",
+  "bytes": 180509,
+  "sha256": "e7436164e356f020bb6379edd168968fbbd25eefb4d0fdc7421c8a647e7fcda5",
+  "original_path": "exemplos/comodo-sala-001/saida-001/sala-mobiliada-eletrica-001.FCStd",
+  "original_sha256": "59231ea6ec8429fafdd44334205c576b80cb8a382d1e8dca9e5acc8bedead33a",
+  "pronto_para_publicar": false,
+  "pronto_para_execucao": false,
+  "authorization": "Usuario autorizou preservar alteracoes locais como revisoes numeradas e sincronizar em 2026-10-16.",
+  "scope": "Exemplo sintetico. Copia exata da alteracao local; nao e redesenho nem aprovacao tecnica."
+}

@@ -1,0 +1,14 @@
+{
+  "revision": 3,
+  "source_path": "exemplos/comodo-eletrico-001/planta-002/planta-eletrica-001.dxf",
+  "source_sha256": "9973c87699ce817bbcfd5feccc2fdd3f338e07a31be946ad0721587110426262",
+  "file": "planta-eletrica-003.dxf",
+  "bytes": 45301,
+  "sha256": "9973c87699ce817bbcfd5feccc2fdd3f338e07a31be946ad0721587110426262",
+  "original_path": "exemplos/comodo-eletrico-001/planta-002/planta-eletrica-001.dxf",
+  "original_sha256": "bb1fcca2716d31de813975cf0068d4ed5907457bad82b0c2935566c763b1d675",
+  "pronto_para_publicar": false,
+  "pronto_para_execucao": false,
+  "authorization": "Usuario autorizou preservar alteracoes locais como revisoes numeradas e sincronizar em 2026-10-16.",
+  "scope": "Exemplo sintetico. Copia exata da alteracao local; nao e redesenho nem aprovacao tecnica."
+}
