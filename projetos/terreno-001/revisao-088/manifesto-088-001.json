@@ -1,0 +1,12 @@
+{
+  "revisao": "088",
+  "salvamento": "003",
+  "autorizacao": "Pedido explicito do usuario em2026-10-21: salve essa ultima versao e suba para o github. Escopo: arquivo atual completo; nao autoriza envio automatico de outros materiais pessoais.",
+  "arquivo": "casa-088-cozinha-banheiro-lavanderia-003.FCStd",
+  "bytes": 1778519,
+  "sha256": "19d24bdf1e57804c58e836567d9d4bbe8e95a5037a17be92b14cdff8b2c26eb3",
+  "pronto_para_publicar": false,
+  "pronto_para_execucao": false,
+  "status": "Rascunho arquivado por autorizacao; revisao tecnica e aprovacao executiva pendentes.",
+  "fontes": "Modelo local em andamento; geometria, distribuicao e equipamentos da revisao088. Originais locais preservados."
+}

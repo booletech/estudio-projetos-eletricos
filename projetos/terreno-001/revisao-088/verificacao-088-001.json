@@ -1,0 +1,14 @@
+{
+  "objetos": 969,
+  "objetos_ausentes": [],
+  "geometrias_alteradas_desde_088_002": [],
+  "grupos_alterados": [],
+  "arquivo_zip_integro": true,
+  "abertura_nativa_FreeCAD": true,
+  "portas_gabinete_fechadas_mm": [
+    18.0,
+    18.0
+  ],
+  "limites": "Conferencia de preservacao e abertura; nao revisao grafica ou tecnica integral. Analise de circulacao089 interrompida, nao aplicada.",
+  "verificar_exemplos": "Passou nos bytes exatos do HEAD remoto, extraidos com git archive. Checkout Windows converte finais de linha de arquivos legados e causa divergencia de hash; nenhum original remoto foi alterado."
+}
