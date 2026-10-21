@@ -1,0 +1,371 @@
+{
+  "objetos": 1037,
+  "objetos_ausentes": [],
+  "geometrias_alteradas_desde_097_002": [],
+  "grupos_alterados": [],
+  "arquivo_zip_integro": true,
+  "abertura_nativa_FreeCAD": true,
+  "testes": {
+    "checks": {
+      "Sala_TV_43_polegadas_moldura": {},
+      "Sala_TV_tela_43_polegadas": {},
+      "Sala_TV_imagem_geometrica": {},
+      "Sala_TV_imagem_geometrica001": {},
+      "PainelTV077": {},
+      "Banqueta093_0": {},
+      "Banqueta093_1": {},
+      "Banqueta093_2": {},
+      "Banqueta093_3": {},
+      "BancadaIntegrada085": {},
+      "Apoio093_1": {},
+      "Travessa093": {},
+      "Cozinha900QuatroSentados": {},
+      "EntradaSala900": {},
+      "AcessoSala600": {},
+      "AcessoCozinha600": {},
+      "Joelhos1": {},
+      "Levantar1": {},
+      "Sentado1": {},
+      "PuxarBanqueta1": {},
+      "Joelhos2": {},
+      "Levantar2": {},
+      "Sentado2": {},
+      "PuxarBanqueta2": {},
+      "Joelhos3": {},
+      "Levantar3": {},
+      "Sentado3": {},
+      "PuxarBanqueta3": {},
+      "Joelhos4": {},
+      "Levantar4": {},
+      "Sentado4": {},
+      "PuxarBanqueta4": {},
+      "PessoasEntreSi": {},
+      "UsoPia": {},
+      "UsoLavadora": {},
+      "UsoTanque": {},
+      "UsoFrenteSofaA600": {},
+      "UsoFrenteSofaB600": {}
+    },
+    "sight": [
+      {
+        "seat": 1,
+        "eye": [
+          3950.0,
+          10600.0,
+          3000.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 24.1,
+        "horizontal_deg": 4.1,
+        "vertical_deg": 1.0,
+        "distance_m": 2.9
+      },
+      {
+        "seat": 1,
+        "eye": [
+          3950.0,
+          10700.0,
+          3000.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 22.2,
+        "horizontal_deg": 2.2,
+        "vertical_deg": 1.0,
+        "distance_m": 2.9
+      },
+      {
+        "seat": 1,
+        "eye": [
+          3950.0,
+          10800.0,
+          3000.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 20.2,
+        "horizontal_deg": 0.2,
+        "vertical_deg": 1.0,
+        "distance_m": 2.89
+      },
+      {
+        "seat": 2,
+        "eye": [
+          3950.0,
+          11300.0,
+          3000.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 10.4,
+        "horizontal_deg": 9.6,
+        "vertical_deg": 1.0,
+        "distance_m": 2.94
+      },
+      {
+        "seat": 2,
+        "eye": [
+          3950.0,
+          11400.0,
+          3000.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 8.5,
+        "horizontal_deg": 11.5,
+        "vertical_deg": 1.0,
+        "distance_m": 2.95
+      },
+      {
+        "seat": 2,
+        "eye": [
+          3950.0,
+          11500.0,
+          3000.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 6.6,
+        "horizontal_deg": 13.4,
+        "vertical_deg": 1.0,
+        "distance_m": 2.98
+      },
+      {
+        "seat": 3,
+        "eye": [
+          3950.0,
+          12350.0,
+          3000.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 8.0,
+        "horizontal_deg": 28.0,
+        "vertical_deg": 0.9,
+        "distance_m": 3.28
+      },
+      {
+        "seat": 3,
+        "eye": [
+          3950.0,
+          12450.0,
+          3000.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 9.5,
+        "horizontal_deg": 29.5,
+        "vertical_deg": 0.9,
+        "distance_m": 3.33
+      },
+      {
+        "seat": 3,
+        "eye": [
+          3950.0,
+          12550.0,
+          3000.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 11.0,
+        "horizontal_deg": 31.0,
+        "vertical_deg": 0.8,
+        "distance_m": 3.38
+      },
+      {
+        "seat": 4,
+        "eye": [
+          3950.0,
+          13050.0,
+          3000.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 17.7,
+        "horizontal_deg": 37.7,
+        "vertical_deg": 0.8,
+        "distance_m": 3.66
+      },
+      {
+        "seat": 4,
+        "eye": [
+          3950.0,
+          13150.0,
+          3000.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 19.0,
+        "horizontal_deg": 39.0,
+        "vertical_deg": 0.8,
+        "distance_m": 3.72
+      },
+      {
+        "seat": 4,
+        "eye": [
+          3950.0,
+          13250.0,
+          3000.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 20.1,
+        "horizontal_deg": 40.1,
+        "vertical_deg": 0.8,
+        "distance_m": 3.79
+      },
+      {
+        "seat": 1,
+        "eye": [
+          3950.0,
+          10600.0,
+          3400.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 24.1,
+        "horizontal_deg": 4.1,
+        "vertical_deg": -6.9,
+        "distance_m": 2.92
+      },
+      {
+        "seat": 1,
+        "eye": [
+          3950.0,
+          10700.0,
+          3400.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 22.2,
+        "horizontal_deg": 2.2,
+        "vertical_deg": -6.9,
+        "distance_m": 2.92
+      },
+      {
+        "seat": 1,
+        "eye": [
+          3950.0,
+          10800.0,
+          3400.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 20.2,
+        "horizontal_deg": 0.2,
+        "vertical_deg": -6.9,
+        "distance_m": 2.91
+      },
+      {
+        "seat": 2,
+        "eye": [
+          3950.0,
+          11300.0,
+          3400.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 10.4,
+        "horizontal_deg": 9.6,
+        "vertical_deg": -6.8,
+        "distance_m": 2.96
+      },
+      {
+        "seat": 2,
+        "eye": [
+          3950.0,
+          11400.0,
+          3400.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 8.5,
+        "horizontal_deg": 11.5,
+        "vertical_deg": -6.8,
+        "distance_m": 2.97
+      },
+      {
+        "seat": 2,
+        "eye": [
+          3950.0,
+          11500.0,
+          3400.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 6.6,
+        "horizontal_deg": 13.4,
+        "vertical_deg": -6.7,
+        "distance_m": 3.0
+      },
+      {
+        "seat": 3,
+        "eye": [
+          3950.0,
+          12350.0,
+          3400.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 8.0,
+        "horizontal_deg": 28.0,
+        "vertical_deg": -6.1,
+        "distance_m": 3.3
+      },
+      {
+        "seat": 3,
+        "eye": [
+          3950.0,
+          12450.0,
+          3400.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 9.5,
+        "horizontal_deg": 29.5,
+        "vertical_deg": -6.0,
+        "distance_m": 3.34
+      },
+      {
+        "seat": 3,
+        "eye": [
+          3950.0,
+          12550.0,
+          3400.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 11.0,
+        "horizontal_deg": 31.0,
+        "vertical_deg": -5.9,
+        "distance_m": 3.39
+      },
+      {
+        "seat": 4,
+        "eye": [
+          3950.0,
+          13050.0,
+          3400.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 17.7,
+        "horizontal_deg": 37.7,
+        "vertical_deg": -5.5,
+        "distance_m": 3.68
+      },
+      {
+        "seat": 4,
+        "eye": [
+          3950.0,
+          13150.0,
+          3400.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 19.0,
+        "horizontal_deg": 39.0,
+        "vertical_deg": -5.4,
+        "distance_m": 3.74
+      },
+      {
+        "seat": 4,
+        "eye": [
+          3950.0,
+          13250.0,
+          3400.0
+        ],
+        "occlusions": {},
+        "screen_offaxis_deg": 20.1,
+        "horizontal_deg": 40.1,
+        "vertical_deg": -5.3,
+        "distance_m": 3.8
+      }
+    ],
+    "blocked": 0,
+    "invalid": [],
+    "sofa_shift_mm": -100,
+    "tv_shift_mm": 100,
+    "sofa_wall_gap_mm": 50,
+    "entry_sofa_stair_gap_mm": 950
+  },
+  "limites": "Conferencia de preservacao, geometria e cenarios modelados; nao revisao grafica ou tecnica integral. Instalacoes de referencia nao integralmente compatibilizadas."
+}

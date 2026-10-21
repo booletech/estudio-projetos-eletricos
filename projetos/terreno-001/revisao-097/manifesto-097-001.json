@@ -1,0 +1,12 @@
+{
+  "revisao": "097",
+  "salvamento": "003",
+  "autorizacao": "Pedido explicito do usuario: salve o projeto e atualize o github. Escopo desta publicacao: revisao atual completa e seus registros de verificacao; nao autoriza outros materiais pessoais nem novos estudos automaticos.",
+  "arquivo": "casa-sofas-parede-097-003.FCStd",
+  "bytes": 1888184,
+  "sha256": "110b352af8c6e46744a86b2b8f658d257689a30bffece95fe87584162c350288",
+  "pronto_para_publicar": false,
+  "pronto_para_execucao": false,
+  "status": "Rascunho arquivado por autorizacao; revisao tecnica e aprovacao executiva pendentes.",
+  "fontes": "Modelo local em andamento; originais e tentativas anteriores preservados localmente."
+}
